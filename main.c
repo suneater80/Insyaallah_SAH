@@ -1,116 +1,72 @@
-// Folder Struktur:
+/*Menu CLI & logika alur program
+- Deklarasi global data antrian &BST pasien
+- Fungsi menuUtama() --> switch case 1-8 
+- Loop untuk input pilihan menu
+- panggil fungsi dari file .c sesuai pilihan 
+- CLI tampilan 
+*/
 
 // Template main.c
-#include "Header/antrian.h"
-#include "Header/pasien.h"
-#include "Header/dokter.h"
-#include "Header/pembayaran.h"
-#include "Header/poli.h"
-#include "Header/rekamMedis.h"
+#include <stdlib.h>
+#include "pasien.h"
+#include "antrian.h"
+#include "poli.h"
+#include "kunjungan.h"
+#include "rekammedis.h"
+#include "pembayaran.h"
 
 int main() {
     int pilihan;
+    Pasien *rootPasien = NULL;
+    Queue antrianLayanan;
+    Poli daftarPoli[MAX_POLI];
+
+    initQueue(&antrianLayanan);
+    initPoli(daftarPoli);
+
     do {
-        tampilkanMenu();
-        printf("Masukkan pilihan: ");
+        printf("\n======================================\n");
+        printf("SISTEM ADMINISTRASI KLINIK\n");
+        printf("1. Ambil Antrian Layanan\n");
+        printf("2. Lihat Antrian Layanan\n");
+        printf("3. Tambah Data Pasien Baru\n");
+        printf("4. Cari Pasien Berdasarkan NIK\n");
+        printf("5. Antrian Poli\n");
+        printf("6. Pembayaran\n");
+        printf("7. Cetak Rekam Medis\n");
+        printf("8. Keluar\n");
+        printf("Masukkan pilihan Anda: ");
         scanf("%d", &pilihan);
-        switch (pilihan) {
+
+        switch(pilihan) {
             case 1:
-                ambilAntrianLayanan();
+                // Panggil fungsi ambilAntrianLayanan(&antrianLayanan);
                 break;
             case 2:
-                lihatAntrianLayanan();
+                // lihatAntrianLayanan(&antrianLayanan);
                 break;
             case 3:
-                tambahPasienBaru();
+                // Tambah data pasien baru ke BST rootPasien
                 break;
             case 4:
-                cariPasien();
+                // Cari pasien berdasarkan NIK
                 break;
             case 5:
-                cetakRekamMedis();
+                // Proses antrian poli
                 break;
-            case 0:
-                printf("Keluar...\n");
+            case 6:
+                // Proses pembayaran
+                break;
+            case 7:
+                // Cetak rekam medis dari BST rootPasien
+                break;
+            case 8:
+                printf("Terima kasih telah menggunakan sistem.\n");
                 break;
             default:
                 printf("Pilihan tidak valid.\n");
         }
-    } while(pilihan != 0);
+    } while(pilihan != 8);
+
     return 0;
 }
-
-// Header antrian.h
-#ifndef ANTRIAN_H
-#define ANTRIAN_H
-
-void ambilAntrianLayanan();
-void lihatAntrianLayanan();
-
-#endif
-
-// Header pasien.h
-
-#ifndef PASIEN_H
-#define PASIEN_H
-
-typedef struct Kunjungan {
-char tanggal[20];
-char keluhan[100];
-char diagnosa[100];
-char resep[100];
-struct Kunjungan* next;
-} Kunjungan;
-
-typedef struct Pasien {
-char nik[20];
-char nama[50];
-int usia;
-char gender[10];
-char statusBPJS[10];
-Kunjungan* riwayat;
-} Pasien;
-
-void tambahPasienBaru();
-void simpanPasienKeFile(Pasien p);
-
-#endif
-
-// Header poli.h
-
-#ifndef POLI_H
-#define POLI_H
-
-void pilihPoli(Pasien* p);
-void masukAntrianPoli(Pasien* p);
-void prosesAntrianPoli();
-
-#endif
-
-// Header rekamMedis.h
-
-#ifndef REKAMMEDIS_H
-#define REKAMMEDIS_H
-
-void cetakRekamMedis();
-
-#endif
-
-// Header dokter.h
-
-#ifndef DOKTER_H
-#define DOKTER_H
-
-void prosesPemeriksaan(Pasien* p);
-
-#endif
-
-// Header pembayaran.h
-
-#ifndef PEMBAYARAN_H
-#define PEMBAYARAN_H
-
-void masukAntrianPembayaran(Pasien* p);
-void cetakTagihanPasien(Pasien* p);
-
-#endif
