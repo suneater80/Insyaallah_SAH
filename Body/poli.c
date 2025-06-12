@@ -5,9 +5,9 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h> // untuk sleep()
-#include "poli.h"
-#include "kunjungan.h"
-#include "pembayaran.h"
+#include "../header/poli.h"
+#include "../header/kunjungan.h"
+#include "../header/pembayaran.h"
 
 // Fungsi inisialisasi daftar Poli
 void initPoli(Poli poli[]) {
@@ -24,11 +24,11 @@ void initPoli(Poli poli[]) {
 // Fungsi untuk menampilkan menu pemilihan Poli
 void menuAntrianPoli(Poli daftarPoli[], Pasien *root, Pembayaran **headPembayaran) {
     int pilihan;
-    printf("▶ ANTRIAN POLI\n");
+    printf("ANTRIAN POLI\n");
     printf("Silakan pilih:\n");
-    printf("1. Proses Antrian Poli Umum\n");
-    printf("2. Proses Antrian Poli Gigi\n");
-    printf("3. Proses Antrian Poli THT\n");
+    printf("1.Poli Umum\n");
+    printf("2.Poli Gigi\n");
+    printf("3.Poli THT\n");
     printf("Pilihan: ");
     scanf("%d", &pilihan);
     getchar(); // buang newline

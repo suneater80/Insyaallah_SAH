@@ -9,9 +9,9 @@ Data struktur: Queue per poli
 #ifndef POLI_H
 #define POLI_H
 
-#include "antrian.h"
-#include "pasien.h"
-#include "pembayaran.h"
+#include "../header/antrian.h"
+#include "../header/pasien.h"
+#include "../header/pembayaran.h"
 
 #define MAX_POLI 3
 #define MAX_ANTRI_POLI 7

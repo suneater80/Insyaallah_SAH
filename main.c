@@ -8,12 +8,12 @@
 
 // Template main.c
 #include <stdlib.h>
-#include "pasien.h"
-#include "antrian.h"
-#include "poli.h"
-#include "kunjungan.h" 
-#include "rekammedis.h"
-#include "pembayaran.h"
+#include "header/pasien.h"
+#include "header/antrian.h"
+#include "header/poli.h"
+#include "header/kunjungan.h" 
+#include "header/rekammedis.h"
+#include "header/pembayaran.h"
 
 int main() {
     int pilihan;
@@ -33,8 +33,8 @@ int main() {
         printf("2. Ambil Antrian Layanan\n");
         printf("3. Lihat Antrian Layanan\n");
         printf("4. Tambah Data Pasien Baru\n");
-        printf("5. Cari Pasien Berdasarkan NIK\n");
-        printf("6. Antrian Poli\n");
+        printf("5. Cari Data Pasien\n");
+        printf("6. Poli\n");
         printf("7. Pembayaran\n");
         printf("8. Cetak Rekam Medis\n");
         printf("9. Keluar\n");

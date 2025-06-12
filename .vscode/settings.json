@@ -1,5 +1,11 @@
 {
     "files.associations": {
-        "IGD.C": "cpp"
+        "IGD.C": "cpp",
+        "pasien.h": "c",
+        "antrian.h": "c",
+        "poli.h": "c",
+        "kunjungan.h": "c",
+        "rekammedis.h": "c",
+        "pembayaran.h": "c"
     }
 }
