@@ -11,7 +11,7 @@
 #include "pasien.h"
 #include "antrian.h"
 #include "poli.h"
-#include "kunjungan.h"
+#include "kunjungan.h" 
 #include "rekammedis.h"
 #include "pembayaran.h"
 
@@ -21,46 +21,55 @@ int main() {
     Queue antrianLayanan;
     Poli daftarPoli[MAX_POLI];
 
+    Pembayaran *headPembayaran = NULL;
+
     initQueue(&antrianLayanan);
     initPoli(daftarPoli);
 
     do {
         printf("\n======================================\n");
-        printf("SISTEM ADMINISTRASI KLINIK\n");
-        printf("1. Ambil Antrian Layanan\n");
-        printf("2. Lihat Antrian Layanan\n");
-        printf("3. Tambah Data Pasien Baru\n");
-        printf("4. Cari Pasien Berdasarkan NIK\n");
-        printf("5. Antrian Poli\n");
-        printf("6. Pembayaran\n");
-        printf("7. Cetak Rekam Medis\n");
-        printf("8. Keluar\n");
+        printf("SISTEM ADMINISTRASI PUSKESMAS\n");
+        printf("1. IGD ");
+        printf("2. Ambil Antrian Layanan\n");
+        printf("3. Lihat Antrian Layanan\n");
+        printf("4. Tambah Data Pasien Baru\n");
+        printf("5. Cari Pasien Berdasarkan NIK\n");
+        printf("6. Antrian Poli\n");
+        printf("7. Pembayaran\n");
+        printf("8. Cetak Rekam Medis\n");
+        printf("9. Keluar\n");
         printf("Masukkan pilihan Anda: ");
         scanf("%d", &pilihan);
 
+
+
         switch(pilihan) {
             case 1:
+                // Pasien gawat darurat akan di masukkan ke IGD 
+            case 2:
                 // Panggil fungsi ambilAntrianLayanan(&antrianLayanan);
                 break;
-            case 2:
+            case 3:
                 // lihatAntrianLayanan(&antrianLayanan);
                 break;
-            case 3:
+            case 4:
                 // Tambah data pasien baru ke BST rootPasien
                 break;
-            case 4:
+            case 5:
                 // Cari pasien berdasarkan NIK
                 break;
-            case 5:
-                // Proses antrian poli
-                break;
             case 6:
+                // Proses antrian poli
+                 menuAntrianPoli(daftarPoli, rootPasien, &headPembayaran);
+                break;
+
+            case 7:
                 // Proses pembayaran
                 break;
-            case 7:
+            case 8:
                 // Cetak rekam medis dari BST rootPasien
                 break;
-            case 8:
+            case 9:
                 printf("Terima kasih telah menggunakan sistem.\n");
                 break;
             default:

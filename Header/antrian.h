@@ -7,8 +7,8 @@
 
 #ifndef ANTRIAN_H
 #define ANTRIAN_H
-
 #define MAKS_ANTRIAN 20
+
 
 typedef struct {
     int nomor;
@@ -24,9 +24,10 @@ void initQueue(Queue *q);
 int isFull(Queue q);
 int isEmpty(Queue q);
 void enqueue(Queue *q, Antrian data);
-Antrian dequeue(Queue *q);
+Antrian dequeue(Queue *q, Pasien *p);
 Antrian lihatDepan(Queue q);
 void tampilAntrian(Queue q);
 
 #endif
+
 
