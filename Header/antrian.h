@@ -8,6 +8,8 @@
 #ifndef ANTRIAN_H
 #define ANTRIAN_H
 
+#include "../header/pasien.h"
+
 #define MAKS_ANTRIAN 20
 
 typedef struct {

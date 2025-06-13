@@ -8,6 +8,7 @@
 
 // Template main.c
 #include <stdlib.h>
+#include <stdio.h>
 #include "header/pasien.h"
 #include "header/antrian.h"
 #include "header/poli.h"

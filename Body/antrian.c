@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../Header/antrian.h"
+#include "../header/antrian.h"
+#include "../header/pasien.h"
 
 void initQueue(Queue *q) {
     q->depan = -1;
