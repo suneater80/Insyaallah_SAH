@@ -4,11 +4,11 @@
 #ifndef PEMBAYARAN_H
 #define PEMBAYARAN_H
 
-#include "pasien.h"
+#include "../header.h"
 
 typedef struct Pembayaran {
     char NIK[20];
-    char nama[MAX_NAMA];
+    char nama[50];
     char poli[10];
     char status_BPJS[10];
     int biaya;

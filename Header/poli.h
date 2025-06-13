@@ -9,17 +9,14 @@ Data struktur: Queue per poli
 #ifndef POLI_H
 #define POLI_H
 
-#include "../header/antrian.h"
-#include "../header/pasien.h"
-#include "../header/pembayaran.h"
+#include "../header.h"
 
 #define MAX_POLI 3
-#define MAX_ANTRI_POLI 7
 
 typedef struct {
-    char kode; // kode poli : 'U' untuk Umum, 'G' untuk gigi, 'T' untuk THT 
-    char nama[20]; // Nama poli ("Poli umum", "Poli Gigi", "Poli THT")
-    Queue antrian; //Queue untuk antrian Poli 
+    char kode;
+    char nama[50];
+    Queue antrian; // gunakan Queue
 } Poli;
 
 void initPoli(Poli poli[]);
@@ -27,4 +24,5 @@ void menuAntrianPoli(Poli daftarPoli[], Pasien *root, Pembayaran **headPembayara
 void prosesAntrianPoli(Poli *poli, Pasien *root, Pembayaran **headPembayaran);
 
 #endif
+
 

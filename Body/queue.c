@@ -1,6 +1,5 @@
-/*implementasi fungsi antrian layanan*/
-#ifndef ANTRIAN_C
-#define ANTRIAN_C
+#ifndef QUEUE_C
+#define QUEUQ_C
 
 #include "../header.h"
 
@@ -22,22 +21,20 @@ void enqueue(Queue *q) {
         printf("❌ Antrian penuh.\n");
         return;
     }
-
     if (isEmpty(q)) {
         q->depan = q->belakang = 0;
     } else {
         q->belakang++;
     }
-
     q->queue[q->belakang].nomor = q->belakang + 1;
 }
 
-void dequeue(Queue *q) {
-    if (isEmpty(q)) return;
+int dequeue(Queue *q) {
+    if (isEmpty(q)) return -1;
+    int nomor = q->queue[q->depan].nomor;
     q->depan++;
-    if (q->depan > q->belakang) {
-        initQueue(q); // reset queue jika habis
-    }
+    if (q->depan > q->belakang) initQueue(q);
+    return nomor;
 }
 
 int lihatDepan(Queue *q) {
@@ -50,40 +47,35 @@ void tampilAntrian(Queue *q) {
         printf("Tidak ada antrian.\n");
         return;
     }
-
     for (int i = q->depan; i <= q->belakang; i++) {
         printf("Antrian ke-%02d\n", q->queue[i].nomor);
     }
 }
 
-// === Fungsi untuk CLI kamu ===
-
-void ambilAntrianLayanan(Queue *q) { //
+void ambilAntrianLayanan(Queue *q) {
     system("cls||clear");
     printf("▶ AMBIL ANTRIAN LAYANAN\n");
 
     if (isFull(q)) {
-        printf("Antrian sudah habis untuk hari ini. Terima kasih telah berkunjung.\n");
-        printf("Tekan Enter untuk kembali ke menu utama...");
-        getchar(); getchar(); // dua kali untuk menangkap enter dari scanf sebelumnya
+        printf("Antrian sudah habis untuk hari ini. Terima kasih.\n");
+        printf("Tekan Enter untuk kembali...");
+        getchar(); getchar();
         return;
     }
 
-    printf("Antrian masih tersedia. Ketik \"Y\" untuk konfirmasi dan \"N\" untuk batal: ");
+    printf("Antrian masih tersedia. Konfirmasi (Y/N): ");
     char konfirmasi;
     scanf(" %c", &konfirmasi);
 
     if (konfirmasi == 'Y' || konfirmasi == 'y') {
         enqueue(q);
-        int nomor = q->queue[q->belakang].nomor;
-        printf("✅ Antrian berhasil diambil\n");
-        printf("Nomor Antrian Anda: %02d\n", nomor);
+        printf("✅ Nomor Antrian Anda: %02d\n", q->queue[q->belakang].nomor);
     } else {
         printf("❌ Pengambilan antrian dibatalkan.\n");
     }
 
-    printf("Tekan Enter untuk kembali ke menu...");
-    getchar(); getchar(); // dua kali enter
+    printf("Tekan Enter untuk kembali...");
+    getchar(); getchar();
 }
 
 void lihatAntrianLayanan(Queue *q) {
@@ -91,7 +83,7 @@ void lihatAntrianLayanan(Queue *q) {
     printf("▶ LIHAT ANTRIAN LAYANAN\n");
 
     if (isEmpty(q)) {
-        printf("Belum ada antrian yang diproses hari ini.\n");
+        printf("Belum ada antrian.\n");
     } else {
         int sedang = lihatDepan(q);
         int berikut = (sedang != -1 && sedang < q->queue[q->belakang].nomor) ? sedang + 1 : -1;
@@ -100,11 +92,12 @@ void lihatAntrianLayanan(Queue *q) {
         if (berikut != -1)
             printf("Antrian Selanjutnya : %02d\n", berikut);
         printf("Sisa antrian : %d\n", sisa);
-        printf("Waktu tunggu : %d menit\n", sisa * 5); // opsional waktu tunggu
+        printf("Waktu tunggu : %d menit\n", sisa * 5);
     }
 
-    printf("Tekan Enter untuk kembali ke menu...");
-    getchar(); getchar(); // dua kali enter
+    printf("Tekan Enter untuk kembali...");
+    getchar(); getchar();
 }
+
 
 #endif
