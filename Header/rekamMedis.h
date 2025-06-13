@@ -6,6 +6,8 @@ Fungsi:
 #ifndef REKAMMEDIS_H
 #define REKAMMEDIS_H
 
+#include "../header.h"
+
 #include "pasien.h"
 
 void cetakRekamMedis(Pasien *root);

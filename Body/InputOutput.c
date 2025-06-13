@@ -1,3 +1,6 @@
+#ifndef INPUTOUTPUT_C
+#define INPUTOUTPUT_C
+
 #include "../header.h"
 
 // ===== IMPLEMENTASI FUNGSI INPUT/OUTPUT =====
@@ -120,3 +123,5 @@ void tungguEnter(void) {
     printf("\nTekan Enter untuk melanjutkan...");
     getchar();
 }
+
+#endif

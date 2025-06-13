@@ -62,6 +62,8 @@ int main() {
             case 6:
                 // Proses antrian poli
                  menuAntrianPoli(daftarPoli, rootPasien, &headPembayaran);
+                 prosesAntrianPoli(&daftarPoli, &rootPasien, &(*headPembayaran));
+
                 break;
 
             case 7:

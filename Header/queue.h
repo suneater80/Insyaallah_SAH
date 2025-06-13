@@ -1,12 +1,5 @@
-/*modul untuk antrian dan layanan poli menggunakan queue 
- Fungsi:
-- Ambil antrian layanan ( maksimal 20/hari)
-- Lihat antrian berjalan 
-- Data struktur: Queue dengan array atau linked list
-*/
-
-#ifndef ANTRIAN_H
-#define ANTRIAN_H
+#ifndef QUEUE_H
+#define QUEUE_H
 
 #include "../header.h"
 
@@ -21,15 +14,15 @@ typedef struct {
     int depan, belakang;
 } Queue;
 
-// Fungsi dasar
 void initQueue(Queue *q);
 int isFull(Queue *q);
 int isEmpty(Queue *q);
-void enqueue(Queue *q);                        
+void enqueue(Queue *q);
+int dequeue(Queue *q);
 int lihatDepan(Queue *q);
 void tampilAntrian(Queue *q);
 
-// Fungsi spesifik sesuai tugas kamu
+// Fungsi CLI
 void ambilAntrianLayanan(Queue *q);
 void lihatAntrianLayanan(Queue *q);
 
