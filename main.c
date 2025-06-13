@@ -51,7 +51,7 @@ int main() {
                 // Panggil fungsi ambilAntrianLayanan(&antrianLayanan);
                 break;
             case 3:
-                // lihatAntrianLayanan(&antrianLayanan);
+                
                 break;
             case 4:
                 // Tambah data pasien baru ke BST rootPasien

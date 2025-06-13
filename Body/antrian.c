@@ -59,7 +59,7 @@ void tampilAntrian(Queue *q) {
 
 // === Fungsi untuk CLI kamu ===
 
-void ambilAntrianLayanan(Queue *q) {
+void ambilAntrianLayanan(Queue *q) { //
     system("cls||clear");
     printf("▶ AMBIL ANTRIAN LAYANAN\n");
 
