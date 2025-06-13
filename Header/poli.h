@@ -24,7 +24,7 @@ typedef struct {
 
 void initPoli(Poli poli[]);
 void menuAntrianPoli(Poli daftarPoli[], Pasien *root, Pembayaran **headPembayaran);
-void prosesAntrianPoli(Poli *poli);
+void prosesAntrianPoli(Poli *poli, Pasien *root, Pembayaran **headPembayaran);
 
 #endif
 

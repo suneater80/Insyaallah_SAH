@@ -50,7 +50,7 @@ void prosesAntrianPoli(Poli *poli, Pasien *root, Pembayaran **headPembayaran)
     }
 
     Pasien dataPasien;
-    dequeue(&poli->antrian, &dataPasien);
+    dequeue(&poli->antrian);
     printf("⏳ Memproses antrian pertama di %s...\n", poli->nama);
     printf("🩺 %s telah dilakukan tindak oleh dokter.\n", dataPasien.nama);
 
