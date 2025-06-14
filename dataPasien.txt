@@ -1,1 +1,4 @@
+=== PASIEN ===
+123456789|hakim|19|L|pasaman, Padang|12344321|AKTIF|0
+
 === END ===

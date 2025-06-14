@@ -1,13 +1,6 @@
 #include "header.h"
 
-// Deklarasi fungsi input/output eksternal
-void inputDataPasien(Pasien* pasien);
-void inputDataKunjungan(char* tanggal, char* keluhan, char* diagnosa, char* resep, char* dokter, float* biaya);
-char* inputNikPasien(void);
-int tampilkanMenu(void);
-void tampilkanPesanSukses(char* pesan);
-void tampilkanPesanError(char* pesan);
-void tungguEnter(void);
+
 
 int main() {
     NodePasien* root = NULL;
