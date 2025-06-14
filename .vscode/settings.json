@@ -6,6 +6,7 @@
         "poli.h": "c",
         "kunjungan.h": "c",
         "rekammedis.h": "c",
-        "pembayaran.h": "c"
+        "pembayaran.h": "c",
+        "time.h": "c"
     }
 }
