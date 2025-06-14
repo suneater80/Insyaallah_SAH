@@ -30,6 +30,7 @@ void inputDataPasien(Pasien* pasien) {
     printf("Jenis Kelamin (L/P): ");
     fgets(pasien->jenisKelamin, sizeof(pasien->jenisKelamin), stdin);
     pasien->jenisKelamin[strcspn(pasien->jenisKelamin, "\n")] = 0;
+    clearInputBuffer();
     
     printf("Alamat: ");
     fgets(pasien->alamat, sizeof(pasien->alamat), stdin);
@@ -54,6 +55,7 @@ void inputDataKunjungan(char* tanggal, char* keluhan, char* diagnosa, char* rese
     printf("Tanggal kunjungan (YYYY-MM-DD): ");
     fgets(tanggal, 11, stdin);
     tanggal[strcspn(tanggal, "\n")] = 0;
+    clearInputBuffer();
     
     printf("Keluhan: ");
     fgets(keluhan, 100, stdin);

@@ -1,4 +1,4 @@
 === PASIEN ===
-0|02|20|0|20|020|02|0
+123456789|hakim|19|L|pasaman, Padang|12344321|AKTIF|0
 
 === END ===
