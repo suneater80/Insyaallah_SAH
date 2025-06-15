@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "../antrian.h"
+#include "../Header/antrian.h"
+#include "../Header/queue.h"
 
 void tampilkanMenuUtama() {
     printf("=== SISTEM ANTRIAN KLINIK ===\n");
