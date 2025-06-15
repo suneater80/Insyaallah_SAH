@@ -41,4 +41,7 @@ int dequeue(Queue *q);
 // Lihat antrian paling depan
 Antrian* peek(Queue *q);
 
+// Dapatkan jumlah antrian saat ini
+int getCount(Queue *q);
+
 #endif

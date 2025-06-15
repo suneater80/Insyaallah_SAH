@@ -7,30 +7,18 @@
 */
 
 // Template main.c
-#include <stdlib.h>
-#include <stdio.h>
-#include "header/pasien.h"
-#include "header/antrian.h"
-#include "header/poli.h"
-#include "header/kunjungan.h" 
-#include "header/rekammedis.h"
-#include "header/pembayaran.h"
+#include "header.h"
 
 int main() {
     int pilihan;
-    Pasien *rootPasien = NULL;
     Queue antrianLayanan;
-    Poli daftarPoli[MAX_POLI];
-
-    Pembayaran *headPembayaran = NULL;
 
     initQueue(&antrianLayanan);
-    initPoli(daftarPoli);
 
     do {
         printf("\n======================================\n");
         printf("SISTEM ADMINISTRASI PUSKESMAS\n");
-        printf("1. IGD ");
+        printf("1. IGD\n");
         printf("2. Ambil Antrian Layanan\n");
         printf("3. Lihat Antrian Layanan\n");
         printf("4. Tambah Data Pasien Baru\n");
@@ -48,10 +36,10 @@ int main() {
             case 1:
                 // Pasien gawat darurat akan di masukkan ke IGD 
             case 2:
-                // Panggil fungsi ambilAntrianLayanan(&antrianLayanan);
+                menuAntrianLayanan(&antrianLayanan);
                 break;
             case 3:
-                
+                tampilkanStatusAntrian(&antrianLayanan);
                 break;
             case 4:
                 // Tambah data pasien baru ke BST rootPasien
@@ -61,9 +49,6 @@ int main() {
                 break;
             case 6:
                 // Proses antrian poli
-                 menuAntrianPoli(daftarPoli, rootPasien, &headPembayaran);
-                 prosesAntrianPoli(&daftarPoli, &rootPasien, &(*headPembayaran));
-
                 break;
 
             case 7:
