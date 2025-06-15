@@ -1,10 +1,4 @@
-#include "Header/antrian.h"
-#include "Header/poli.h"
-#include "Header/queue.h"
-
-#include "Body/antrian.c"
-#include "Body/poli.c"
-#include "Body/queue.c"
+#include "header.h"
 
 void menuPoli(Poli poli[]);
 

@@ -1,38 +1,38 @@
 === PASIEN ===
 3201234567890013|Nurdin Abdullah|48|L|Jl. Lengkong Kecil No. 67, Bandung|081234567902|AKTIF|5
 === KUNJUNGAN_3201234567890013 ===
-37|2024-01-03|Nyeri lambung|Gastritis akut|Omeprazol, Antasida|Dr. Ahmad Fauzi|180000
-38|2024-01-17|Kontrol lambung|Gastritis membaik|Omeprazol|Dr. Ahmad Fauzi|120000
-39|2024-01-31|BAB berdarah|Hemoroid|Ardium, Salep hemoroid|Dr. Ahmad Fauzi|220000
-40|2024-02-14|Kontrol hemoroid|Hemoroid membaik|Ardium|Dr. Ahmad Fauzi|150000
 41|2024-03-07|Konstipasi|Konstipasi kronis|Laxative, serat|Dr. Ahmad Fauzi|130000
+40|2024-02-14|Kontrol hemoroid|Hemoroid membaik|Ardium|Dr. Ahmad Fauzi|150000
+39|2024-01-31|BAB berdarah|Hemoroid|Ardium, Salep hemoroid|Dr. Ahmad Fauzi|220000
+38|2024-01-17|Kontrol lambung|Gastritis membaik|Omeprazol|Dr. Ahmad Fauzi|120000
+37|2024-01-03|Nyeri lambung|Gastritis akut|Omeprazol, Antasida|Dr. Ahmad Fauzi|180000
 
 === PASIEN ===
 3201234567890006|Fatimah Zahra|29|P|Jl. Cihampelas No. 33, Bandung|081234567895|AKTIF|2
 === KUNJUNGAN_3201234567890006 ===
-16|2024-02-18|Keputihan|Infeksi jamur|Fluconazole, Nystatin|Dr. Maya Sari|180000
 17|2024-03-01|Kontrol infeksi|Infeksi jamur sembuh|Vitamin C|Dr. Maya Sari|100000
+16|2024-02-18|Keputihan|Infeksi jamur|Fluconazole, Nystatin|Dr. Maya Sari|180000
 
 === PASIEN ===
 3201234567890003|Budi Prasetyo|42|L|Jl. Asia Afrika No. 45, Bandung|081234567892|NONAKTIF|4
 === KUNJUNGAN_3201234567890003 ===
-6|2024-01-10|Nyeri dada|Hipertensi|Amlodipine, Captopril|Dr. Hendro Wijaya|250000
-7|2024-01-24|Kontrol tekanan darah|Hipertensi terkendali|Amlodipine, Captopril|Dr. Hendro Wijaya|150000
-8|2024-02-15|Pusing|Hipertensi|Amlodipine, Captopril|Dr. Hendro Wijaya|150000
 9|2024-03-05|Kontrol rutin|Hipertensi terkendali|Amlodipine, Captopril|Dr. Hendro Wijaya|150000
+8|2024-02-15|Pusing|Hipertensi|Amlodipine, Captopril|Dr. Hendro Wijaya|150000
+7|2024-01-24|Kontrol tekanan darah|Hipertensi terkendali|Amlodipine, Captopril|Dr. Hendro Wijaya|150000
+6|2024-01-10|Nyeri dada|Hipertensi|Amlodipine, Captopril|Dr. Hendro Wijaya|250000
 
 === PASIEN ===
 3201234567890001|Ahmad Rahman|35|L|Jl. Merdeka No. 15, Bandung|081234567890|AKTIF|3
 === KUNJUNGAN_3201234567890001 ===
-1|2024-01-15|Demam tinggi|Demam berdarah|Paracetamol, Vitamin C|Dr. Siti Nurhaliza|150000
-2|2024-02-20|Batuk pilek|Influenza|Amoxicillin, Obat batuk|Dr. Budi Santoso|120000
 3|2024-03-10|Sakit kepala|Migrain|Ibuprofen, Paracetamol|Dr. Siti Nurhaliza|100000
+2|2024-02-20|Batuk pilek|Influenza|Amoxicillin, Obat batuk|Dr. Budi Santoso|120000
+1|2024-01-15|Demam tinggi|Demam berdarah|Paracetamol, Vitamin C|Dr. Siti Nurhaliza|150000
 
 === PASIEN ===
 3201234567890002|Siti Aminah|28|P|Jl. Sudirman No. 22, Bandung|081234567891|AKTIF|2
 === KUNJUNGAN_3201234567890002 ===
-4|2024-01-25|Mual muntah|Gastritis|Omeprazole, Domperidone|Dr. Ahmad Fauzi|180000
 5|2024-02-28|Kontrol kehamilan|Kehamilan normal 20 minggu|Asam folat, Zat besi|Dr. Lisa Marlina|200000
+4|2024-01-25|Mual muntah|Gastritis|Omeprazole, Domperidone|Dr. Ahmad Fauzi|180000
 
 === PASIEN ===
 3201234567890004|Dewi Kartika|31|P|Jl. Dipati Ukur No. 67, Bandung|081234567893|AKTIF|1
@@ -42,28 +42,28 @@
 === PASIEN ===
 3201234567890005|Eko Supriyanto|45|L|Jl. Dago No. 89, Bandung|081234567894|AKTIF|5
 === KUNJUNGAN_3201234567890005 ===
-11|2024-01-08|Nyeri punggung|Saraf kejepit|Diclofenac, Neurobion|Dr. Agus Salim|300000
-12|2024-01-22|Kontrol nyeri punggung|Saraf kejepit membaik|Diclofenac, Neurobion|Dr. Agus Salim|200000
-13|2024-02-12|Nyeri punggung kambuh|Saraf kejepit|Diclofenac, Neurobion|Dr. Agus Salim|250000
-14|2024-02-26|Fisioterapi|Saraf kejepit|Obat anti nyeri|Dr. Agus Salim|350000
 15|2024-03-15|Kontrol rutin|Saraf kejepit membaik|Vitamin neurotropik|Dr. Agus Salim|150000
+14|2024-02-26|Fisioterapi|Saraf kejepit|Obat anti nyeri|Dr. Agus Salim|350000
+13|2024-02-12|Nyeri punggung kambuh|Saraf kejepit|Diclofenac, Neurobion|Dr. Agus Salim|250000
+12|2024-01-22|Kontrol nyeri punggung|Saraf kejepit membaik|Diclofenac, Neurobion|Dr. Agus Salim|200000
+11|2024-01-08|Nyeri punggung|Saraf kejepit|Diclofenac, Neurobion|Dr. Agus Salim|300000
 
 === PASIEN ===
 3201234567890009|Joko Widodo|52|L|Jl. Trunojoyo No. 78, Bandung|081234567898|AKTIF|6
 === KUNJUNGAN_3201234567890009 ===
-22|2024-01-05|Diabetes kontrol|Diabetes melitus tipe 2|Metformin, Glimepiride|Dr. Bambang Sutrisno|300000
-23|2024-01-19|Luka diabetes|Ulkus diabetik|Antibiotik, insulin|Dr. Bambang Sutrisno|450000
-24|2024-02-02|Kontrol gula darah|Diabetes terkendali|Metformin, Glimepiride|Dr. Bambang Sutrisno|200000
-25|2024-02-16|Kontrol rutin|Diabetes terkendali|Metformin, Glimepiride|Dr. Bambang Sutrisno|200000
-26|2024-03-02|Mata kabur|Retinopati diabetik|Rujukan ke Sp.Mata|Dr. Bambang Sutrisno|180000
 27|2024-03-16|Kontrol diabetes|Diabetes terkendali|Metformin, Glimepiride|Dr. Bambang Sutrisno|200000
+26|2024-03-02|Mata kabur|Retinopati diabetik|Rujukan ke Sp.Mata|Dr. Bambang Sutrisno|180000
+25|2024-02-16|Kontrol rutin|Diabetes terkendali|Metformin, Glimepiride|Dr. Bambang Sutrisno|200000
+24|2024-02-02|Kontrol gula darah|Diabetes terkendali|Metformin, Glimepiride|Dr. Bambang Sutrisno|200000
+23|2024-01-19|Luka diabetes|Ulkus diabetik|Antibiotik, insulin|Dr. Bambang Sutrisno|450000
+22|2024-01-05|Diabetes kontrol|Diabetes melitus tipe 2|Metformin, Glimepiride|Dr. Bambang Sutrisno|300000
 
 === PASIEN ===
 3201234567890007|Hendra Gunawan|38|L|Jl. Setiabudi No. 12, Bandung|081234567896|NONAKTIF|3
 === KUNJUNGAN_3201234567890007 ===
-18|2024-01-30|Batuk berdahak|Bronkitis|Ambroxol, Amoxicillin|Dr. Rudi Hartono|220000
-19|2024-02-10|Sesak napas|Asma|Salbutamol inhaler|Dr. Rudi Hartono|280000
 20|2024-02-25|Kontrol asma|Asma terkendali|Salbutamol inhaler|Dr. Rudi Hartono|150000
+19|2024-02-10|Sesak napas|Asma|Salbutamol inhaler|Dr. Rudi Hartono|280000
+18|2024-01-30|Batuk berdahak|Bronkitis|Ambroxol, Amoxicillin|Dr. Rudi Hartono|220000
 
 === PASIEN ===
 3201234567890008|Indira Permata|26|P|Jl. Pasteur No. 56, Bandung|081234567897|AKTIF|1
@@ -73,35 +73,35 @@
 === PASIEN ===
 3201234567890011|Lukman Hakim|39|L|Jl. Buah Batu No. 44, Bandung|081234567900|NONAKTIF|4
 === KUNJUNGAN_3201234567890011 ===
-30|2024-01-12|Sakit gigi|Karies dentis|Antibiotik, analgetik|Dr. Diah Ayu|200000
-31|2024-01-26|Cabut gigi|Ekstraksi gigi|Antibiotik, analgetik|Dr. Diah Ayu|300000
-32|2024-02-09|Kontrol pasca cabut gigi|Luka sembuh baik|Vitamin C|Dr. Diah Ayu|100000
 33|2024-03-20|Pembersihan karang gigi|Gingivitis|Obat kumur antiseptik|Dr. Diah Ayu|150000
+32|2024-02-09|Kontrol pasca cabut gigi|Luka sembuh baik|Vitamin C|Dr. Diah Ayu|100000
+31|2024-01-26|Cabut gigi|Ekstraksi gigi|Antibiotik, analgetik|Dr. Diah Ayu|300000
+30|2024-01-12|Sakit gigi|Karies dentis|Antibiotik, analgetik|Dr. Diah Ayu|200000
 
 === PASIEN ===
 3201234567890010|Kartini Sari|33|P|Jl. Riau No. 90, Bandung|081234567899|AKTIF|2
 === KUNJUNGAN_3201234567890010 ===
-28|2024-02-08|Nyeri haid|Dismenore|Asam mefenamat, Paracetamol|Dr. Lisa Marlina|120000
 29|2024-03-08|Kontrol KB|KB suntik 3 bulan|KB Depo Provera|Dr. Lisa Marlina|85000
+28|2024-02-08|Nyeri haid|Dismenore|Asam mefenamat, Paracetamol|Dr. Lisa Marlina|120000
 
 === PASIEN ===
 3201234567890012|Maya Anggraini|27|P|Jl. Sukajadi No. 23, Bandung|081234567901|AKTIF|3
 === KUNJUNGAN_3201234567890012 ===
-34|2024-01-18|Jerawat parah|Acne vulgaris|Tretinoin, Clindamycin|Dr. Rina Dewi|250000
-35|2024-02-01|Kontrol jerawat|Acne membaik|Tretinoin, Clindamycin|Dr. Rina Dewi|180000
 36|2024-02-22|Kulit kering|Dermatitis atopik|Moisturizer, Hidrokortison|Dr. Rina Dewi|200000
+35|2024-02-01|Kontrol jerawat|Acne membaik|Tretinoin, Clindamycin|Dr. Rina Dewi|180000
+34|2024-01-18|Jerawat parah|Acne vulgaris|Tretinoin, Clindamycin|Dr. Rina Dewi|250000
 
 === PASIEN ===
 3201234567890019|Teguh Santoso|36|L|Jl. Lombok No. 33, Bandung|081234567908|NONAKTIF|2
 === KUNJUNGAN_3201234567890019 ===
-59|2024-02-07|Nyeri lutut|Osteoartritis|Diclofenac, Glucosamine|Dr. Ortopedi Bram|280000
 60|2024-02-21|Kontrol lutut|Osteoartritis stabil|Glucosamine|Dr. Ortopedi Bram|200000
+59|2024-02-07|Nyeri lutut|Osteoartritis|Diclofenac, Glucosamine|Dr. Ortopedi Bram|280000
 
 === PASIEN ===
 3201234567890016|Qonita Rahman|30|P|Jl. Cipaganti No. 55, Bandung|081234567905|AKTIF|2
 === KUNJUNGAN_3201234567890016 ===
-50|2024-02-11|Nyeri payudara|Mastitis|Antibiotik, analgetik|Dr. Maya Sari|200000
 51|2024-02-25|Kontrol mastitis|Mastitis sembuh|Vitamin C|Dr. Maya Sari|100000
+50|2024-02-11|Nyeri payudara|Mastitis|Antibiotik, analgetik|Dr. Maya Sari|200000
 
 === PASIEN ===
 3201234567890014|Olivia Putri|24|P|Jl. Martadinata No. 88, Bandung|081234567903|AKTIF|1
@@ -111,45 +111,45 @@
 === PASIEN ===
 3201234567890015|Priyanto Susilo|41|L|Jl. Veteran No. 11, Bandung|081234567904|NONAKTIF|7
 === KUNJUNGAN_3201234567890015 ===
-43|2024-01-01|Stroke ringan|TIA (Transient Ischemic Attack)|Aspirin, Clopidogrel|Dr. Neurologi Andri|500000
-44|2024-01-08|Kontrol stroke|TIA stabil|Aspirin, Clopidogrel|Dr. Neurologi Andri|300000
-45|2024-01-22|Fisioterapi stroke|Rehabilitasi stroke|Obat neurotropik|Dr. Neurologi Andri|400000
-46|2024-02-05|Kontrol neurologi|Kondisi membaik|Aspirin, Clopidogrel|Dr. Neurologi Andri|300000
-47|2024-02-19|Pusing|Vertigo|Betahistin|Dr. Neurologi Andri|200000
-48|2024-03-05|Kontrol rutin|Kondisi stabil|Aspirin, Clopidogrel|Dr. Neurologi Andri|300000
 49|2024-03-19|Fisioterapi lanjutan|Rehabilitasi stroke|Obat neurotropik|Dr. Neurologi Andri|400000
+48|2024-03-05|Kontrol rutin|Kondisi stabil|Aspirin, Clopidogrel|Dr. Neurologi Andri|300000
+47|2024-02-19|Pusing|Vertigo|Betahistin|Dr. Neurologi Andri|200000
+46|2024-02-05|Kontrol neurologi|Kondisi membaik|Aspirin, Clopidogrel|Dr. Neurologi Andri|300000
+45|2024-01-22|Fisioterapi stroke|Rehabilitasi stroke|Obat neurotropik|Dr. Neurologi Andri|400000
+44|2024-01-08|Kontrol stroke|TIA stabil|Aspirin, Clopidogrel|Dr. Neurologi Andri|300000
+43|2024-01-01|Stroke ringan|TIA (Transient Ischemic Attack)|Aspirin, Clopidogrel|Dr. Neurologi Andri|500000
 
 === PASIEN ===
 3201234567890017|Rizki Pratama|25|L|Jl. Cilaki No. 77, Bandung|081234567906|AKTIF|3
 === KUNJUNGAN_3201234567890017 ===
-52|2024-01-20|Kecelakaan motor|Luka lecet multiple|Betadine, perban|Dr. IGD Handoko|350000
-53|2024-01-27|Kontrol luka|Luka sembuh baik|Vitamin C|Dr. IGD Handoko|100000
 54|2024-02-17|Sakit kepala|Tension headache|Paracetamol, relaksan otot|Dr. Siti Nurhaliza|120000
+53|2024-01-27|Kontrol luka|Luka sembuh baik|Vitamin C|Dr. IGD Handoko|100000
+52|2024-01-20|Kecelakaan motor|Luka lecet multiple|Betadine, perban|Dr. IGD Handoko|350000
 
 === PASIEN ===
 3201234567890018|Sarah Melissa|32|P|Jl. Supratman No. 99, Bandung|081234567907|AKTIF|4
 === KUNJUNGAN_3201234567890018 ===
-55|2024-01-14|Demam pada anak|Demam viral|Paracetamol sirup|Dr. Rina Susanti|100000
-56|2024-01-28|Batuk pilek anak|Common cold|Obat batuk anak|Dr. Rina Susanti|85000
-57|2024-02-24|Diare anak|Gastroenteritis akut|ORS, Zinc|Dr. Rina Susanti|120000
 58|2024-03-14|Imunisasi anak|Imunisasi DPT|Vaksin DPT|Dr. Rina Susanti|150000
+57|2024-02-24|Diare anak|Gastroenteritis akut|ORS, Zinc|Dr. Rina Susanti|120000
+56|2024-01-28|Batuk pilek anak|Common cold|Obat batuk anak|Dr. Rina Susanti|85000
+55|2024-01-14|Demam pada anak|Demam viral|Paracetamol sirup|Dr. Rina Susanti|100000
 
 === PASIEN ===
 3201234567890022|Wulan Sari|34|P|Jl. Burangrang No. 12, Bandung|081234567911|AKTIF|3
 === KUNJUNGAN_3201234567890022 ===
-68|2024-01-16|Varises|Varises tungkai|Stocking kompresi|Dr. Vaskular Eko|350000
-69|2024-02-13|Kontrol varises|Varises membaik|Stocking kompresi|Dr. Vaskular Eko|200000
 70|2024-03-13|Nyeri kaki|Varises|Stocking kompresi, analgetik|Dr. Vaskular Eko|250000
+69|2024-02-13|Kontrol varises|Varises membaik|Stocking kompresi|Dr. Vaskular Eko|200000
+68|2024-01-16|Varises|Varises tungkai|Stocking kompresi|Dr. Vaskular Eko|350000
 
 === PASIEN ===
 3201234567890020|Umi Kalsum|44|P|Jl. Kebon Jati No. 21, Bandung|081234567909|AKTIF|6
 === KUNJUNGAN_3201234567890020 ===
-61|2024-01-06|Menopause|Sindrom menopause|Terapi hormon|Dr. Lisa Marlina|300000
-62|2024-01-20|Hot flashes|Sindrom menopause|Terapi hormon|Dr. Lisa Marlina|250000
-63|2024-02-03|Mood swing|Sindrom menopause|Terapi hormon, antidepresan|Dr. Lisa Marlina|280000
-64|2024-02-17|Kontrol hormon|Sindrom menopause|Terapi hormon|Dr. Lisa Marlina|250000
-65|2024-03-03|Osteoporosis|Osteoporosis post menopause|Kalsium, Vitamin D|Dr. Lisa Marlina|320000
 66|2024-03-17|Kontrol tulang|Osteoporosis|Kalsium, Vitamin D|Dr. Lisa Marlina|200000
+65|2024-03-03|Osteoporosis|Osteoporosis post menopause|Kalsium, Vitamin D|Dr. Lisa Marlina|320000
+64|2024-02-17|Kontrol hormon|Sindrom menopause|Terapi hormon|Dr. Lisa Marlina|250000
+63|2024-02-03|Mood swing|Sindrom menopause|Terapi hormon, antidepresan|Dr. Lisa Marlina|280000
+62|2024-01-20|Hot flashes|Sindrom menopause|Terapi hormon|Dr. Lisa Marlina|250000
+61|2024-01-06|Menopause|Sindrom menopause|Terapi hormon|Dr. Lisa Marlina|300000
 
 === PASIEN ===
 3201234567890021|Vino Bastian|29|L|Jl. Pajajaran No. 66, Bandung|081234567910|AKTIF|1
@@ -159,25 +159,25 @@
 === PASIEN ===
 3201234567890024|Yuni Shara|40|P|Jl. Gegerkalong No. 88, Bandung|081234567913|AKTIF|5
 === KUNJUNGAN_3201234567890024 ===
-75|2024-01-04|Kanker payudara|Ca Mammae stadium II|Kemoterapi|Dr. Onkologi Fajar|1500000
-76|2024-01-18|Efek samping kemo|Mual akibat kemo|Antiemetik|Dr. Onkologi Fajar|200000
-77|2024-02-01|Kemoterapi siklus 2|Ca Mammae|Kemoterapi|Dr. Onkologi Fajar|1500000
-78|2024-02-15|Kontrol kanker|Ca Mammae|Supportive care|Dr. Onkologi Fajar|300000
 79|2024-03-01|Kemoterapi siklus 3|Ca Mammae|Kemoterapi|Dr. Onkologi Fajar|1500000
+78|2024-02-15|Kontrol kanker|Ca Mammae|Supportive care|Dr. Onkologi Fajar|300000
+77|2024-02-01|Kemoterapi siklus 2|Ca Mammae|Kemoterapi|Dr. Onkologi Fajar|1500000
+76|2024-01-18|Efek samping kemo|Mual akibat kemo|Antiemetik|Dr. Onkologi Fajar|200000
+75|2024-01-04|Kanker payudara|Ca Mammae stadium II|Kemoterapi|Dr. Onkologi Fajar|1500000
 
 === PASIEN ===
 3201234567890023|Xavier Nugroho|37|L|Jl. Ciumbuleuit No. 45, Bandung|081234567912|NONAKTIF|4
 === KUNJUNGAN_3201234567890023 ===
-71|2024-01-09|Alergi makanan|Urtikaria|Antihistamin, steroid|Dr. Alergi Imun Sri|280000
-72|2024-01-23|Kontrol alergi|Urtikaria membaik|Antihistamin|Dr. Alergi Imun Sri|180000
-73|2024-02-06|Asma alergi|Asma bronkial|Inhaler, antihistamin|Dr. Alergi Imun Sri|320000
 74|2024-02-20|Kontrol asma|Asma terkendali|Inhaler|Dr. Alergi Imun Sri|200000
+73|2024-02-06|Asma alergi|Asma bronkial|Inhaler, antihistamin|Dr. Alergi Imun Sri|320000
+72|2024-01-23|Kontrol alergi|Urtikaria membaik|Antihistamin|Dr. Alergi Imun Sri|180000
+71|2024-01-09|Alergi makanan|Urtikaria|Antihistamin, steroid|Dr. Alergi Imun Sri|280000
 
 === PASIEN ===
 3201234567890025|Zaki Iskandar|43|L|Jl. Setrasari No. 19, Bandung|081234567914|AKTIF|3
 === KUNJUNGAN_3201234567890025 ===
-80|2024-02-04|Batu ginjal|Nefrolitiasis|ESWL, analgetik|Dr. Urologi Dedi|800000
-81|2024-02-18|Kontrol batu ginjal|Post ESWL|Analgetik, diuretik|Dr. Urologi Dedi|300000
 82|2024-03-04|Kontrol rutin|Nefrolitiasis|Diuretik|Dr. Urologi Dedi|250000
+81|2024-02-18|Kontrol batu ginjal|Post ESWL|Analgetik, diuretik|Dr. Urologi Dedi|300000
+80|2024-02-04|Batu ginjal|Nefrolitiasis|ESWL, analgetik|Dr. Urologi Dedi|800000
 
 === END ===
