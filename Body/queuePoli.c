@@ -3,7 +3,7 @@
 #include <stdlib.h>
 */
 
-#include "../header.h"
+#include "../Header/queuePoli.h"
 
 void initQueue(Queue *q) {
     q->front = 0;

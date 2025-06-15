@@ -4,7 +4,8 @@
 #include <string.h>
 #include <unistd.h>  // Untuk sleep() 
 */
-#include "../header.h"
+
+#include "../Header/poli.h"
 
 void initPoli(Poli poli[]) {
     strcpy(poli[0].nama, "Poli Umum");

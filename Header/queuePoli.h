@@ -1,7 +1,8 @@
 #ifndef QUEUEPOLI_H
 #define QUEUEPOLI_H
 
-#include "../header.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 #define MAX_ANTRI 7
 

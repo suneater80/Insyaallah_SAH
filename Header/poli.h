@@ -5,8 +5,14 @@ Fungsi:
 - Pindah ke dokter
 Data struktur: Queue per poli
 */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <unistd.h> 
 
-#include "../header.h"
+#include "queuePoli.h"
+
 #ifndef POLI_H
 #define POLI_H
 
