@@ -8,7 +8,7 @@
 #ifndef ANTRIAN_H
 #define ANTRIAN_H
 
-#include "queue.h"
+#include "queueLayanan.h"
 
 void menuAntrianLayanan(Queue *antrian);
 void tampilkanStatusAntrian(Queue *antrian);

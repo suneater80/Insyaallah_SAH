@@ -1,11 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "../Header/antrian.h"
-#include "../Header/queue.h"
-
 #ifndef ANTRIAN_C
 #define ANTRIAN_C
+
+
+
+#include "../Header/antrian.h"
+#include "../Header/queueLayanan.h"
+
 
 #ifdef _WIN32
 #include <windows.h>

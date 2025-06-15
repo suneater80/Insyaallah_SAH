@@ -1,5 +1,8 @@
-#include "../Header/queue.h"
+#include "../Header/queueLayanan.h"
 #include <stdio.h>
+
+#ifndef QUEUELAYANAN_C
+#define QUEUELAYANAN_C
 
 void initQueue(Queue *q) {
     q->front = 0;
@@ -43,3 +46,5 @@ Antrian* peek(Queue *q) {
 int getCount(Queue *q) {
     return q->count;
 }
+
+#endif

@@ -1,4 +1,4 @@
-#include "../Header/poli.h"
+#include "header.h"
 
 // ============= MODUL PASIEN POLI =============
 int main() {

@@ -3,9 +3,33 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <unistd.h>
 
+// //Hakim
+#include "Header/pasien.h"
+#include "Header/balancing.h"
 
+#include "Body/InputOutput.c"
+#include "Body/pasien.c"
+#include "Body/balancing.c"
 
+//Azam
+#include "Header/antrian.h"
+#include "Header/queueLayanan.h"
+
+#include "Body/antrian.c"
+#include "Body/queueLayanan.c"
+
+//Seruni
+#include "Header/poli.h"
+#include "Header/queuePoli.h"
+
+#include "Body/poli.c"
+#include "Body/queuePoli.c"
 
 
 #endif

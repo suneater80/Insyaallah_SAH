@@ -1,5 +1,9 @@
-#ifndef QUEUE_H
-#define QUEUE_H
+#ifndef QUEUELAYANAN_H
+#define QUEUELAYANAN_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX_ANTRIAN 20
 
