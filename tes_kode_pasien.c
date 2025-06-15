@@ -7,7 +7,7 @@ int main() {
     int pilihan;
     char filename[] = "dataPasien.txt";
     
-    // Load data dari file saat startup
+    // Load data dari file saat program dimulai
     printf("=== SISTEM MANAJEMEN PASIEN ===\n");
     printf("Memuat data...\n");
     root = loadPasienFromFile(filename);
@@ -116,6 +116,7 @@ int main() {
             case 0: {
                 // Keluar
                 printf("\nMenyimpan data sebelum keluar...\n");
+                root = balanceBST(root);
                 saveAllPasienToFile(root, filename);
                 tampilkanPesanSukses("Data telah disimpan. Terima kasih!");
                 break;

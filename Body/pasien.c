@@ -186,7 +186,7 @@ void saveAllPasienToFile(NodePasien* root, char* filename) {
 NodePasien* loadPasienFromFile(char* filename) {
     FILE* file = fopen(filename, "r");
     if (file == NULL) {
-        printf("File %s tidak ditemukan, memulai dengan data kosong\n", filename);
+        printf("File %s tidak ditemukan, file baru akan dibuat\n", filename);
         return NULL;
     }
     
@@ -279,3 +279,4 @@ NodePasien* loadPasienFromFile(char* filename) {
     printf("Data berhasil dimuat dari %s\n", filename);
     return root;
 }
+

@@ -10,6 +10,7 @@
 #include <unistd.h>  // untuk sleep()
 
 #include "Header/pasien.h"
+#include "Header/balancing.h"
 // #include "Header/antrian.h"
 // #include "Header/kunjungan.h"
 // #include "Header/pembayaran.h"
@@ -19,6 +20,7 @@
 
 #include "Body/pasien.c"
 #include "Body/InputOutput.c"
+#include "Body/balancing.c"
 // #include "Body/antrian.c"
 // #include "Body/poli.c"
 // #include "Body/queue.c"
