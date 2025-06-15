@@ -9,20 +9,23 @@
 #include <time.h>
 #include <unistd.h>  // untuk sleep()
 
-// #include "Header/pasien.h"
-#include "Header/antrian.h"
+// #include "Header/antrian.h"
 // #include "Header/kunjungan.h"
 // #include "Header/pembayaran.h"
-// #include "Header/poli.h"
-#include "Header/queue.h"
 // #include "Header/rekamMedis.h"
+
+#include "Header/queuePoli.h"
+#include "Header/poli.h"
+
+// #include "Header/pasien.h"
+
+
 
 // #include "Body/pasien.c"
 // #include "Body/InputOutput.c"
 // #include "Body/antrian.c"
 // #include "Body/poli.c"
 // #include "Body/queue.c"
-
 
 
 #endif

@@ -1,97 +1,79 @@
-/*Implementasi fungsi proses antrian poli*/
-#ifndef POLI_C
-#define POLI_C
-
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>  // Untuk sleep() 
+*/
 #include "../header.h"
 
-// Fungsi inisialisasi daftar Poli
 void initPoli(Poli poli[]) {
-    char kodePoli[MAX_POLI] = {'U', 'G', 'T'};
-    char *namaPoli[MAX_POLI] = {"Poli Umum", "Poli Gigi", "Poli THT"};
+    strcpy(poli[0].nama, "Poli Umum");
+    strcpy(poli[1].nama, "Poli Gigi");
+    strcpy(poli[2].nama, "Poli THT");
 
     for (int i = 0; i < MAX_POLI; i++) {
-        poli[i].kode = kodePoli[i];
-        strcpy(poli[i].nama, namaPoli[i]);
-        initQueue(&poli[i].antrian); // inisialisasi antrian poli 
+        initQueue(&poli[i].antrian);
+        poli[i].nomorTerakhir = 0;
     }
 }
 
-// Fungsi untuk menampilkan menu pemilihan Poli. Fungsi ini akan memanggil prosesAntrianPoli()
-void menuAntrianPoli(Poli daftarPoli[], Pasien *root, Pembayaran **headPembayaran) {
-    int pilihan;
-    printf("ANTRIAN POLI\n");
-    printf("Silakan pilih:\n");
-    printf("1.Poli Umum\n");
-    printf("2.Poli Gigi\n");
-    printf("3.Poli THT\n");
-    printf("Pilihan: ");
-    scanf("%d", &pilihan);
-    getchar(); // membersihkan newline
-
-    if (pilihan < 1 || pilihan > MAX_POLI) {
-        printf("Pilihan tidak valid.\n");
+void daftarPoli(Poli *poli) {
+    if (isFull(&poli->antrian)) {
+        printf("Maaf, antrian %s sudah penuh!\n", poli->nama);
         return;
     }
-
-    prosesAntrianPoli(&daftarPoli[pilihan - 1], root, headPembayaran);
+    poli->nomorTerakhir++;
+    enqueue(&poli->antrian, poli->nomorTerakhir);
+    printf("Pendaftaran berhasil!\nNomor antrian Anda untuk %s: %d\n", poli->nama, poli->nomorTerakhir);
 }
 
-// Fungsi proses antrian Poli
-/*
-- mengeluarkan pasien pertama dari antrian (dequeue)
-- mencari data pasien di BST berdasarkan nik 
-- meminta input untuk data kunjungan 
-- menghitung biaya (sesuai poli dan statu bpjs)
-- memasukkan pasien ke daftar pembayaran 
-*/
-void prosesAntrianPoli(Poli *poli, Pasien *root, Pembayaran **headPembayaran){
-    if (isEmptyQueue(&poli->antrian)) {
+void prosesAntrianPoli(Poli *poli) {
+    if (isEmpty(&poli->antrian)) {
         printf("Tidak ada pasien dalam antrian %s.\n", poli->nama);
         return;
     }
 
-    Pasien dataPasien = dequeue(&poli->antrian); // ✅ UPDATE: gunakan Pasien dataPasien = dequeue(...);
+    int nomor = peek(&poli->antrian);
+    printf("Pasien nomor %d sedang diperiksa di %s...\n", nomor, poli->nama);
 
-    if (strcmp(dataPasien.nik, "-") == 0) { // ✅ TAMBAH: validasi kalau kosong
-        printf("Tidak ada pasien dalam antrian %s.\n", poli->nama);
-        return;
+    // Countdown contoh 5 detik (bisa ubah ke 60 jika mau)
+    for (int i = 5; i >= 0; i--) {
+        printf("\rSisa waktu: %2d detik ", i);
+        fflush(stdout);
+        sleep(1);
     }
 
-    printf("⏳ Memproses antrian pertama di %s...\n", poli->nama);
-    printf(" telah dilakukan tindak oleh dokter.\n", dataPasien.nama);
+    printf("\nPasien nomor %d selesai diperiksa.\n\n", dequeue(&poli->antrian));
 
-    printf("(Menunggu 5 detik...)\n");
-    sleep(5); // simulasi proses tindakan dokter 
-
-    Pasien *pasienBST = cariPasien(root, dataPasien.nik); // cari data pasien di BST 
-    if (pasienBST != NULL) {
-        tambahKunjungan(pasienBST); // minta input kunjungan pasien
+    if (isEmpty(&poli->antrian)) {
+        printf("Semua pasien di %s telah diperiksa.\n", poli->nama);
     } else {
-        printf("Data pasien tidak ditemukan di database!\n");
-        return;
+        printf("Masih ada pasien dalam antrian %s.\n", poli->nama);
     }
+}
 
-    Pembayaran pembayaran;
-    strcpy(pembayaran.NIK, dataPasien.nik);
-    strcpy(pembayaran.nama, dataPasien.nama);
-    strcpy(pembayaran.poli, poli->nama);
-    strcpy(pembayaran.status_BPJS, dataPasien.statusBpjs);
-    
-    // Simulasi Penentuan biaya berdasarkan BPJS dan jenis poli
-    if (strcmp(pembayaran.status_BPJS, "Ya") == 0) {
-        pembayaran.biaya = 0;
-    } else {
-        if (poli->kode == 'U') pembayaran.biaya = 30000;
-        else if (poli->kode == 'G') pembayaran.biaya = 50000;
-        else if (poli->kode == 'T') pembayaran.biaya = 45000;
+
+void lihatStatusAntrian(Poli poli[]) {
+    tampilkanHeader("STATUS ANTRIAN POLI");
+    for (int i = 0; i < MAX_POLI; i++) {
+        printf("%d. %s\n", i + 1, poli[i].nama);
+        printf("   Total Antrian    : %d\n", getCount(&poli[i].antrian));
+        printf("   Nomor Terakhir   : %d\n", poli[i].nomorTerakhir);
+        if (!isEmpty(&poli[i].antrian))
+            printf("   Sedang Dilayani  : %d\n", peek(&poli[i].antrian));
+        printf("\n");
     }
+    pause();
+}
 
-    tambahAntrianPembayaran(headPembayaran, pembayaran); // masukkan ke antrian pembayaran 
+void tampilkanHeader(const char *judul) {
+    printf("\n===========================\n");
+    printf(" %s\n", judul);
+    printf("===========================\n");
+}
 
-    printf("➡ Pasien masuk ke daftar pembayaran.\n");
-    printf("Tekan Enter untuk lanjut...");
+void pause() {
+    printf("Tekan ENTER untuk melanjutkan...");
+    getchar();
     getchar();
 }
-
-
-#endif
