@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile C files",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "Body/antrian.c",
+                "Body/dokter.c",
+                "Body/IGD.c",
+                "Body/kunjungan.c",
+                "Body/pasien.c",
+                "Body/pembayaran.c",
+                "Body/poli.c",
+                "Body/rekamMedis.c",
+                "-o",
+                "output_program"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compile all C files into an executable"
+        }
+    ]
+}

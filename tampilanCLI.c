@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 
+
 // Struktur data yang sudah diberikan
 typedef struct Kunjungan {
     int idKunjungan;
