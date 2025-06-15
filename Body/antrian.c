@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../header.h"
+#include "../Header/antrian.h"
+#include "../Header/queue.h"
 
 #ifndef ANTRIAN_C
 #define ANTRIAN_C
