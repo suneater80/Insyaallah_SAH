@@ -10,7 +10,7 @@
 #include <unistd.h>  // untuk sleep()
 
 #include "Header/pasien.h"
-// #include "Header/antrian.h"
+#include "Header/antrian.h"
 // #include "Header/kunjungan.h"
 // #include "Header/pembayaran.h"
 // #include "Header/poli.h"
