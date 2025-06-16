@@ -83,7 +83,7 @@ NodePasien* balanceBST(NodePasien* root) {
     // Bangun balanced BST dari sorted array
     NodePasien* balancedRoot = buildBalancedBST(nodeArray, 0, nodeCount - 1);
     
-    // Free array (bukan node-nya, karena masih digunakan)
+    // Free array (bukan node-nya, karena masih digunakan ygy. klo dihapus ilang sudah itu data)
     free(nodeArray);
     
     printf("Balancing BST selesai.\n");

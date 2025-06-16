@@ -231,6 +231,8 @@ char* inputNikPasien(void) {
     return nik;
 }
 
+
+// ===== TAMBAHAN UNTUK UJI COBA KODE =====
 int tampilkanMenu(void) {
     int pilihan;
     
