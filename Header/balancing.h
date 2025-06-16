@@ -4,7 +4,10 @@
 #ifndef BALANCING_H
 #define BALANCING_H
 
-#include "../header.h"
+#include <stdio.h>
+
+// Forward declaration - supaya tidak perlu include pasien.h
+typedef struct NodePasien NodePasien;
 
 // ===== DEKLARASI FUNGSI BALANCING =====
 
@@ -25,5 +28,9 @@ void preorderTraversal(NodePasien* root);
 
 // Fungsi untuk menghitung tinggi tree (untuk debugging)
 int getTreeHeight(NodePasien* root);
+
+int verifyBST(NodePasien* root, char* minNik, char* maxNik);
+
+int isBST(NodePasien* root);
 
 #endif
