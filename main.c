@@ -13,7 +13,7 @@ int main() {
     // Muat data pasien dari file saat program dimulai
     char filename[] = "dataPasien.txt";
     rootPasien = loadPasienFromFile(filename);
-    printf("Memulai Sistem Administrasi Rumah Sakit...\n");
+    printf("Memulai Sistem Administrasi Puskesmas...\n");
     sleep(2);
 
     int pilihan;
@@ -41,12 +41,10 @@ int main() {
 
         switch (pilihan) {
             case 1:
-                // 
-                
+                menuAntrianLayanan(&antrianLayanan);
                 break;
             case 2:
-                // 
-                
+                tampilkanStatusAntrian(&antrianLayanan);
                 break;
             case 3:
                 // ===== MODUL LAYANAN POLI ======
