@@ -11,11 +11,14 @@
 
 // //Hakim
 #include "Header/pasien.h"
+#include "Header/kunjungan.h"
+#include "Header/file.h"
 #include "Header/balancing.h"
 
-//#include "Body/InputOutput.c"
-//#include "Body/pasien.c"
 // #include "Body/balancing.c"
+// #include "Body/file.c"
+// #include "Body/kunjungan.c"
+// #include "Body/pasien.c"
 
 //Azam
 #include "Header/antrian.h"
@@ -30,6 +33,5 @@
 // Azam & Seruni
 #include "Header/queue.h"
 // #include "Body/queue.c"
-
 
 #endif

@@ -1,4 +1,7 @@
 /* Implementasi fungsi balancing BST Pasien */
+#ifndef BALANCING_C
+#define BALANCING_C
+
 #include "../header.h"
 
 // ===== IMPLEMENTASI FUNGSI BALANCING =====
@@ -80,7 +83,7 @@ NodePasien* balanceBST(NodePasien* root) {
     // Bangun balanced BST dari sorted array
     NodePasien* balancedRoot = buildBalancedBST(nodeArray, 0, nodeCount - 1);
     
-    // Free array (bukan node-nya, karena masih digunakan)
+    // Free array (bukan node-nya, karena masih digunakan ygy. klo dihapus ilang sudah itu data)
     free(nodeArray);
     
     printf("Balancing BST selesai.\n");
@@ -134,3 +137,5 @@ int verifyBST(NodePasien* root, char* minNik, char* maxNik) {
 int isBST(NodePasien* root) {
     return verifyBST(root, NULL, NULL);
 }
+
+#endif

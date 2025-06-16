@@ -2,20 +2,11 @@
 */ 
 #ifndef PASIEN_H
 #define PASIEN_H
-#include "../header.h"
+#include <stdio.h>
 
 
-// Struktur data untuk kunjungan (linked list)
-typedef struct Kunjungan {
-    int idKunjungan;
-    char tanggal[11];
-    char keluhan[100];
-    char diagnosa[100];
-    char resep[200];
-    char dokter[50];
-    float biaya;
-    struct Kunjungan *next;
-} Kunjungan;
+// Forward declaration untuk struct Kunjungan, ilmu baru, mahal mahal
+typedef struct Kunjungan Kunjungan;
 
 
 // Struktur data untuk pasien
@@ -39,16 +30,6 @@ typedef struct NodePasien {
 } NodePasien;
 
 
-// Global counter untuk ID kunjungan
-extern int globalKunjunganId;
-
-// ===== DEKLARASI FUNGSI LINKED LIST KUNJUNGAN =====
-Kunjungan* createKunjungan(char* tanggal, char* keluhan, char* diagnosa, char* resep, char* dokter, float biaya);
-
-void tambahKunjungan(Pasien* pasien, char* tanggal, char* keluhan, char* diagnosa, char* resep, char* dokter, float biaya);
-void cetakRiwayatKunjungan(Kunjungan* head);
-void freeRiwayatKunjungan(Kunjungan* head);
-
 // ===== DEKLARASI FUNGSI BST PASIEN =====
 NodePasien* createNodePasien(Pasien pasien);
 NodePasien* insertPasien(NodePasien* root, Pasien pasien);
@@ -56,25 +37,6 @@ NodePasien* searchPasien(NodePasien* root, char* nik);
 void cetakDataPasien(Pasien pasien);
 void cetakSemuaPasien(NodePasien* root);
 void freeBstPasien(NodePasien* root);
-
-// ===== DEKLARASI FUNGSI FILE OPERATIONS =====
-void savePasienToFile(NodePasien* root, FILE* file);
-void saveAllPasienToFile(NodePasien* root, char* filename);
-NodePasien* loadPasienFromFile(char* filename);
-
-// ===== DEKLARASI FUNGSI INPUT/OUTPUT =====
-void inputDataPasien(Pasien* pasien);
-void inputDataKunjungan(char* tanggal, char* keluhan, char* diagnosa, char* resep, char* dokter, float* biaya);
-void clearInputBuffer(void);
-
-// Deklarasi fungsi input/output eksternal
-void inputDataPasien(Pasien* pasien);
-void inputDataKunjungan(char* tanggal, char* keluhan, char* diagnosa, char* resep, char* dokter, float* biaya);
-char* inputNikPasien(void);
-int tampilkanMenu(void);
-void tampilkanPesanSukses(char* pesan);
-void tampilkanPesanError(char* pesan);
-void tungguEnter(void);
 
 #endif
 

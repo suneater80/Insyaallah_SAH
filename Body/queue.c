@@ -48,48 +48,70 @@ int getCountLayanan(QueueLayanan *q) {
     return q->count;
 }
 
+
+
+
 // ========== IMPLEMENTASI QUEUE POLI ==========
 
+// MODUL QUEUE POLI (KOSONG)
 void initQueuePoli(QueuePoli *q) {
-    q->front = 0;
-    q->rear = -1;
-    q->count = 0;
+    q->front = 0; // Indeks elemen pertama
+    q->rear = -1; // Indeks elemen terakhir
+    q->count = 0;  // Jumlah elemen dalam queue (antrian)
 }
 
+
+
+// MODUL CEK APAKAH QUEUE PENUH 
 int isFullPoli(QueuePoli *q) {
-    return q->count == MAX_ANTRIAN_POLI;
+    return q->count == MAX_ANTRIAN_POLI; // Return 1 jika penuh, 0 jika tidak
 }
 
+
+
+// MODUL APAKAH QUEUE KOSONG 
 int isEmptyPoli(QueuePoli *q) {
-    return q->count == 0;
+    return q->count == 0; // Return 1 jika kosong, 0 jika tidak
 }
 
+
+
+// TAMBAHKAN ELEMEN KE BELAKANG QUEUE
 void enqueuePoli(QueuePoli *q, int value) {
     if (isFullPoli(q)) {
         printf("Antrian penuh!\n");
         return;
     }
-    q->rear = (q->rear + 1) % MAX_ANTRIAN_POLI;
-    q->data[q->rear] = value;
-    q->count++;
+    q->rear = (q->rear + 1) % MAX_ANTRIAN_POLI; // Circular queue: looping kembali ke awal jika sudah mentok
+    q->data[q->rear] = value;  // Simpan nomor antrian pasien
+    q->count++; // Tambah jumlah elemen
 }
 
+
+
+// MODUL MENGELUARKAN ELEMEN DARI DEPAN QUEUE 
 int dequeuePoli(QueuePoli *q) {
     if (isEmptyPoli(q)) {
         printf("Antrian kosong!\n");
-        return -1;
+        return -1; // Return -1 jika kosong
     }
-    int value = q->data[q->front];
-    q->front = (q->front + 1) % MAX_ANTRIAN_POLI;
-    q->count--;
-    return value;
+    int value = q->data[q->front];  // Ambil data paling depan
+    q->front = (q->front + 1) % MAX_ANTRIAN_POLI; // Circular queue
+    q->count--;  // Kurangi jumlah elemen
+    return value; // Return data yang diambil
 }
 
+
+
+// MODUL MENGAMBIL ELEMEN PALING DEPAN TANPA MENGHAPUS 
 int peekPoli(QueuePoli *q) {
-    if (isEmptyPoli(q)) return -1;
-    return q->data[q->front];
+    if (isEmptyPoli(q)) return -1; // Jika kosong, return -1
+    return q->data[q->front]; // Return elemen paling depan
 }
 
+
+
+// MODUL MENGAMBIL JUMLAH ELEMEN SAAT DALAM QUEUE
 int getCountPoli(QueuePoli *q) {
-    return q->count;
+    return q->count;  // Return jumlah elemen dalam queue
 }
