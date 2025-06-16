@@ -8,28 +8,30 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+#include <conio.h> // Untuk kbhit() dan getch() di Windows
 
-// //Hakim
-#include "Header/pasien.h"
-#include "Header/balancing.h"
 
-#include "Body/InputOutput.c"
-#include "Body/pasien.c"
-#include "Body/balancing.c"
+// // //Hakim
+// #include "Header/pasien.h"
+// #include "Header/balancing.h"
 
-//Azam
-#include "Header/antrian.h"
+// #include "Body/InputOutput.c"
+// #include "Body/pasien.c"
+// #include "Body/balancing.c"
 
-#include "Body/antrian.c"
+// //Azam
+// #include "Header/antrian.h"
+
+// #include "Body/antrian.c"
 
 //Seruni
 #include "Header/poli.h"
 
-#include "Body/poli.c"
+// #include "Body/poli.c"
 
 // Azam & Seruni
 #include "Header/queue.h"
-#include "Body/queue.c"
+// #include "Body/queue.c"
 
 
 #endif
