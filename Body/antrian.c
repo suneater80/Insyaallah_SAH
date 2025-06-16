@@ -42,7 +42,13 @@ void menuAntrianLayanan(QueueLayanan *antrian) {
     printf("Pilihan Anda: ");
 
     int pilihan;
-    scanf("%d", &pilihan);
+    char input[10];
+    fgets(input, sizeof(input), stdin);
+    if (sscanf(input, "%d", &pilihan) != 1) {
+        printf("Pilihan tidak valid.\n");
+        pause();
+        return;
+    }
 
     Kategori kategori;
     switch (pilihan) {
@@ -53,12 +59,12 @@ void menuAntrianLayanan(QueueLayanan *antrian) {
         kategori = BPJS;
         break;
     case 0:
-        break;
+        return;
     default:
         printf("Pilihan tidak valid.\n");
         pause();
         return;
-}
+    }
 
     if (enqueueLayanan(antrian, kategori)) {
         char awalan = (kategori == UMUM) ? 'U' : 'B';
@@ -123,8 +129,15 @@ void prosesLoketAntrian(QueueLayanan *antrian) {
     printf("1. Pasien Baru\n");
     printf("2. Pasien Lama\n");
     printf("\nPilihan: ");
-    scanf("%d", &pilihan);
     
+    char input[10];
+    fgets(input, sizeof(input), stdin);
+    if (sscanf(input, "%d", &pilihan) != 1) {
+        printf("Pilihan tidak valid!\n");
+        pause();
+        return;
+    }
+
     switch(pilihan) {
         case 1:
             printf("\nMemproses pasien baru...\n");
@@ -163,6 +176,8 @@ void prosesLoketAntrian(QueueLayanan *antrian) {
 
 void menuLoketAntrian(QueueLayanan *antrian) {
     int pilihan;
+    char input[10];
+
     do {
         clearScreen();
         tampilkanHeader("LOKET ANTRIAN");
@@ -171,8 +186,14 @@ void menuLoketAntrian(QueueLayanan *antrian) {
         printf("2. Lihat Status Antrian\n");
         printf("0. Kembali ke Menu Utama\n");
         printf("\nPilihan: ");
-        scanf("%d", &pilihan);
         
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%d", &pilihan) != 1) {
+            printf("Pilihan tidak valid!\n");
+            pause();
+            continue;
+        }
+
         switch(pilihan) {
             case 1:
                 prosesLoketAntrian(antrian);
