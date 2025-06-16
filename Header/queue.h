@@ -5,7 +5,7 @@
 #include <stdlib.h> // Untuk alokasi memori dinamis (jika diperlukan)
 #include <string.h> // Untuk manipulasi string (jika diperlukan)
 
-#define MAX_ANTRIAN_LAYANAN 20
+#define MAX_ANTRIAN_LAYANAN 24
 
 // Kategori pasien untuk layanan
 typedef enum {
@@ -36,6 +36,8 @@ int enqueueLayanan(QueueLayanan *q, Kategori kategori);
 int dequeueLayanan(QueueLayanan *q);
 AntrianLayanan* peekLayanan(QueueLayanan *q);
 int getCountLayanan(QueueLayanan *q);
+
+
 
 
 

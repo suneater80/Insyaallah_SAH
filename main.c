@@ -19,20 +19,17 @@ int main() {
     int pilihan;
     do {
         clearScreen();
-        tampilkanHeader("SISTEM MANAJEMEN KLINIK");
-        printf("=== UNTUK PASIEN ===\n");
-        printf("1. Ambil Antrian Layanan\n");
-        printf("2. Lihat Status Antrian Masuk\n");
-        printf("3. Lihat Status Antrian Poli\n\n");
-        
-        printf("=== UNTUK PETUGAS ===\n");
-        printf("4. Loket Antrian\n");
-        printf("5. Dokter\n");
-        printf("6. Pembayaran\n\n");
-        
+        tampilkanHeader("SISTEM ADMINISTRASI PUSKESMAS");
+        printf("1. Layanan Pengambilan Antrian \n");
+        printf("2. Lihat Status Antrian\n");
+        printf("3. Layanan Poli\n");
+        printf("5. Input Data Kunjungan\n");
+        printf("6. Cetak Rekam Medis\n");
+        printf("7. Pembayaran\n");
         printf("0. Keluar\n");
         printf("===========================\n");
         printf("Pilihan Anda: ");
+
         if (scanf("%d", &pilihan) != 1) {
             printf("Input tidak valid. Masukkan angka.\n");
             clearInputBuffer(); 
@@ -52,7 +49,8 @@ int main() {
                 
                 break;
             case 3:
-                // 
+                // ===== MODUL LAYANAN POLI ======
+                panggilPoli();
                 
                 break;
             case 4:
@@ -67,6 +65,12 @@ int main() {
                 // 
 
                 break;
+
+            case 7:
+                //
+
+                break;
+                
             case 0:
                 // Keluar dari program
                 tampilkanHeader("TERIMA KASIH");

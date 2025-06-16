@@ -15,7 +15,8 @@ void clearScreen() {
 
 void pause() {
     printf("\nTekan ENTER untuk kembali ke menu...");
-    getchar(); getchar();
+    getchar(); 
+    getchar();
 }
 
 void tampilkanHeader(const char *judul) {

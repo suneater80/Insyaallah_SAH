@@ -3,7 +3,7 @@
 #include "Header/queue.h"
 
 // ============= MODUL PASIEN POLI =============
-int main() {
+int panggilPoli() {
     Poli poli[MAX_POLI]; // Array untuk menyimpan semua poli
     initPoli(poli); // Inisialisasi nama poli & queue antriannya
     

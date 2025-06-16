@@ -1,11 +1,3 @@
-/* Manajemen poli & proses antrian masing-masing poli 
-Fungsi:
-- Pilih poli (umum/gigi/THT)
-- Masuk dan proses antrian poli (7 antrian/poli)
-- Pindah ke dokter
-Data struktur: Queue per poli
-*/
-
 #ifndef POLI_H
 #define POLI_H
 
@@ -16,6 +8,7 @@ Data struktur: Queue per poli
 #include <unistd.h> // Untuk fungsi sleep() di UNIX/Linux (gunakan Sleep() di Windows jika perlu)
 
 #include "queue.h"
+#include "antrian.h"
 #define MAX_POLI 3 // Jumlah maksimal poli (Umum, Gigi, THT)
 
 // Struktur data untuk menyimpan informasi sebuah poli
@@ -32,5 +25,6 @@ void daftarPoli(Poli *poli); // Proses pasien dalam antrian poli
 void prosesAntrianPoli(Poli *poli); // Tampilkan status antrian semua poli
 void lihatStatusAntrian(Poli poli[]); // Tampilkan header dengan judul tertentu
 void pause();  // Pause program, tunggu input ENTER
+int panggilPoli();
 
 #endif
