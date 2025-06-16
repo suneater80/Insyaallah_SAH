@@ -38,6 +38,7 @@ void menuAntrianLayanan(QueueLayanan *antrian) {
     printf("Silakan pilih kategori pasien:\n");
     printf("1. Umum\n");
     printf("2. BPJS\n");
+    printf("0. Kembali ke Menu Utama\n");
     printf("Pilihan Anda: ");
 
     int pilihan;
@@ -50,6 +51,8 @@ void menuAntrianLayanan(QueueLayanan *antrian) {
         break;
     case 2:
         kategori = BPJS;
+        break;
+    case 0:
         break;
     default:
         printf("Pilihan tidak valid.\n");
