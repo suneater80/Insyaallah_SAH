@@ -7,6 +7,8 @@
         "kunjungan.h": "c",
         "rekammedis.h": "c",
         "pembayaran.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "queue.h": "c",
+        "poli.c": "cpp"
     }
 }

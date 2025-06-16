@@ -13,23 +13,23 @@
 #include "Header/pasien.h"
 #include "Header/balancing.h"
 
-#include "Body/InputOutput.c"
-#include "Body/pasien.c"
-#include "Body/balancing.c"
+//#include "Body/InputOutput.c"
+//#include "Body/pasien.c"
+// #include "Body/balancing.c"
 
 //Azam
 #include "Header/antrian.h"
 
-#include "Body/antrian.c"
+// #include "Body/antrian.c"
 
 //Seruni
 #include "Header/poli.h"
 
-#include "Body/poli.c"
+// #include "Body/poli.c"
 
 // Azam & Seruni
 #include "Header/queue.h"
-#include "Body/queue.c"
+// #include "Body/queue.c"
 
 
 #endif
