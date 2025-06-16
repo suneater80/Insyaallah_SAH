@@ -44,15 +44,18 @@ void menuAntrianLayanan(QueueLayanan *antrian) {
     scanf("%d", &pilihan);
 
     Kategori kategori;
-    if (pilihan == 1) {
+    switch (pilihan) {
+    case 1:
         kategori = UMUM;
-    } else if (pilihan == 2) {
+        break;
+    case 2:
         kategori = BPJS;
-    } else {
+        break;
+    default:
         printf("Pilihan tidak valid.\n");
         pause();
         return;
-    }
+}
 
     if (enqueueLayanan(antrian, kategori)) {
         char awalan = (kategori == UMUM) ? 'U' : 'B';
