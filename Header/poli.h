@@ -13,9 +13,11 @@
 
 // Struktur data untuk menyimpan informasi sebuah poli
 typedef struct {
-    char nama[20]; // Nama poli, contoh: "Poli Umum"
-    QueuePoli antrian; // Queue untuk menyimpan nomor antrian pasien di poli ini
-    int nomorTerakhir; // Nomor antrian terakhir yang didaftarkan
+    char nama[20];
+   QueuePoli antrianIGD;      // <-- Tambahkan queue untuk prioritas IGD
+    QueuePoli antrian;         // Queue antrian biasa
+    int nomorTerakhir;     // Untuk antrian biasa
+    int nomorTerakhirIGD;  // <-- Tambahkan nomor antrian untuk IGD
 } Poli;
 
 // ====== PROTOTIPE FUNGSI ======

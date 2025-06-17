@@ -20,6 +20,7 @@ void clearInputBuffer(void);
 // Deklarasi fungsi input/output eksternal
 char* inputNikPasien(void);
 int tampilkanMenu(void);
+int tampilkanMenu2(void);
 void tampilkanPesanSukses(char* pesan);
 void tampilkanPesanError(char* pesan);
 void tungguEnter(void);

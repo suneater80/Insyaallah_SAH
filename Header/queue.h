@@ -50,6 +50,7 @@ typedef struct {
     int count; // Jumlah elemen dalam antrian
 } QueuePoli;
 
+
 // ==== FUNGSI & PROSEDUR POLI ====
 void initQueuePoli(QueuePoli *q); // Inisialisasi queue
 int isFullPoli(QueuePoli *q); // Cek apakah queue penuh

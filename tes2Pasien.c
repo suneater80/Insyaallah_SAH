@@ -25,7 +25,7 @@ int main() {
     }
     
     do {
-        pilihan = tampilkanMenu();
+        pilihan = tampilkanMenu2();
         
         switch (pilihan) {
             case 1: {
