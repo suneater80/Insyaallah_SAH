@@ -9,6 +9,7 @@
 
 #include "queue.h"
 #include "antrian.h"
+#include "pasien.h"
 #define MAX_POLI 3 // Jumlah maksimal poli (Umum, Gigi, THT)
 
 // Struktur data untuk menyimpan informasi sebuah poli
@@ -24,9 +25,8 @@ typedef struct {
 void tampilkanHeader(const char *judul); // Inisialisasi daftar poli dan antrian
 void initPoli(Poli poli[]); //Tambah pasien ke antrian poli
 void daftarPoli(Poli *poli); // Proses pasien dalam antrian poli
-void prosesAntrianPoli(Poli *poli); // Tampilkan status antrian semua poli
+void prosesAntrianPoli(Poli *poli, NodePasien** rootPasien); // Tampilkan status antrian semua poli
 void lihatStatusAntrian(Poli poli[]); // Tampilkan header dengan judul tertentu
 void pause();  // Pause program, tunggu input ENTER
-int panggilPoli();
 
 #endif

@@ -16,25 +16,27 @@
 #include "Header/file.h"
 #include "Header/balancing.h"
 
-// #include "Body/balancing.c"
-// #include "Body/file.c"
-// #include "Body/kunjungan.c"
-// #include "Body/pasien.c"
+#include "Body/balancing.c"
+#include "Body/file.c"
+#include "Body/kunjungan.c"
+#include "Body/pasien.c"
 
 //Azam
 #include "Header/antrian.h"
 #include "Header/pembayaran.h"
 
-// #include "Body/antrian.c"
+#include "Body/antrian.c"
+#include "Body/pembayaran.c"
 
 //Seruni
 #include "Header/poli.h"
 #include "Header/IGD.h"
 
-// #include "Body/poli.c"
+#include "Body/poli.c"
+#include "Body/IGD.c"
 
 // Azam & Seruni
 #include "Header/queue.h"
-// #include "Body/queue.c"
+#include "Body/queue.c"
 
 #endif

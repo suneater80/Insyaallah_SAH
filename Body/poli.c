@@ -11,7 +11,6 @@ void initPoli(Poli poli[]) {
     for (int i = 0; i < MAX_POLI; i++) {
         initQueuePoli(&poli[i].antrian); // Inisialisasi queue untuk setiap poli 
         poli[i].nomorTerakhir = 0; // Reset nomor antrian 
-        poli[i].nomorTerakhirIGD = 0; // Reset nomor antrian IGD 
     }
 }
 
@@ -31,7 +30,7 @@ void daftarPoli(Poli *poli) {
 
 
 // MODUL PROSES ANTRIAN POLI SATU PER SATU 
-void prosesAntrianPoli(Poli *poli) {
+void prosesAntrianPoli(Poli *poli, NodePasien** rootPasien) {
     if (isEmptyPoli(&poli->antrian)) { // Cek jika antrian kosong
         printf("Tidak ada pasien dalam antrian %s.\n", poli->nama);
         return;
@@ -39,7 +38,7 @@ void prosesAntrianPoli(Poli *poli) {
 
     int nomor = peekPoli(&poli->antrian); // Ambil nomor antrian paling depan
     printf("Pasien nomor %d sedang diperiksa di %s...\n", nomor, poli->nama);
-    printf("Tekan ENTER untuk melewati pemeriksaan...\n");
+    printf("Tekan ENTER untuk Skip adegan pemeriksaan...\n");
 
     // Countdown 5 detik, bisa dilewati dengan ENTER
     for (int i = 5; i >= 0; i--) {
@@ -57,12 +56,26 @@ void prosesAntrianPoli(Poli *poli) {
     printf("\n");  // baris baru setelah countdown selesai
     printf("\nPasien nomor %d selesai diperiksa.\n\n", dequeuePoli(&poli->antrian)); // Keluarkan pasien dari antrian
 
-    // Informasikan status antrian setelah pemeriksaan
-    if (isEmptyPoli(&poli->antrian)) {
-        printf("Semua pasien di %s telah diperiksa.\n", poli->nama);
+    // Input Data Kunjungan    
+    printf("Dokter menginput Data Kunjungan Pasien. \n");
+    char* nik = inputNikPasien();
+                
+    NodePasien* found = searchPasien(*rootPasien, nik);
+    if (found != NULL) {
+        char tanggal[11], keluhan[100], diagnosa[100], resep[200], dokter[50];
+        float biaya;
+                    
+        inputDataKunjungan(tanggal, keluhan, diagnosa, resep, dokter, &biaya);
+                    
+        tambahKunjungan(&found->data, tanggal, keluhan, diagnosa, resep, dokter, biaya);
+        tampilkanPesanSukses("Kunjungan berhasil ditambahkan!");
     } else {
-        printf("Masih ada pasien dalam antrian %s.\n", poli->nama);
+        char errorMsg[100];
+        sprintf(errorMsg, "Pasien dengan NIK %s tidak ditemukan.", nik);
+        tampilkanPesanError(errorMsg);
     }
+    tungguEnter();
+    
 }
 
 
@@ -79,70 +92,4 @@ void lihatStatusAntrian(Poli poli[]) {
         printf("\n");
     }
     pause(); // Tunggu ENTER untuk kembali ke menu
-}
-
-
-
-int panggilPoli() {
-    Poli poli[MAX_POLI]; // Array untuk menyimpan semua poli
-    initPoli(poli); // Inisialisasi nama poli & queue antriannya
-    
-    int pilihan;
-
-    do {
-        clearScreen();
-        tampilkanHeader("MENU UTAMA POLI");
-        printf("1. Daftar Antrian Poli\n");
-        printf("2. Proses Antrian Poli\n");
-        printf("3. Lihat Status Antrian Poli\n");
-        printf("0. Kembali ke Menu Utama\n");
-        printf("Pilihan: ");
-        scanf("%d", &pilihan);
-
-        switch (pilihan) {
-            case 1:
-                clearScreen();
-                tampilkanHeader("DAFTAR ANTRIAN POLI");
-                printf("1. Poli Umum\n");
-                printf("2. Poli Gigi\n");
-                printf("3. Poli THT\n");
-                printf("Pilihan: ");
-                scanf("%d", &pilihan);
-                if (pilihan >= 1 && pilihan <= 3)
-                    daftarPoli(&poli[pilihan - 1]);
-                else
-                    printf("Pilihan tidak valid!\n");
-                pause();
-                break;
-
-            case 2:
-                clearScreen();
-                tampilkanHeader("PROSES ANTRIAN POLI");
-                printf("1. Poli Umum\n");
-                printf("2. Poli Gigi\n");
-                printf("3. Poli THT\n");
-                printf("Pilihan: ");
-                scanf("%d", &pilihan);
-                if (pilihan >= 1 && pilihan <= 3)
-                    prosesAntrianPoli(&poli[pilihan - 1]);
-                else
-                    printf("Pilihan tidak valid!\n");
-                pause();
-                break;
-
-            case 3:
-                lihatStatusAntrian(poli);
-                break;
-
-            case 0:
-            
-                break;
-
-            default:
-                printf("Pilihan tidak valid!\n");
-                pause();
-        }
-
-    } while (pilihan != 0);
-       return 0;
 }
