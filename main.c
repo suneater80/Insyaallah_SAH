@@ -20,12 +20,12 @@ int main() {
     do {
         clearScreen();
         tampilkanHeader("SISTEM ADMINISTRASI PUSKESMAS");
-        printf("1. Layanan Pengambilan Antrian \n");
-        printf("2. Lihat Status Antrian\n");
-        printf("3. Layanan Poli\n");
-        printf("5. Input Data Kunjungan\n");
-        printf("6. Cetak Rekam Medis\n");
-        printf("7. Pembayaran\n");
+        printf("1. Pengambilan Antrian Calon Pasien \n");
+        printf("2. Lihat Status Antrian Calon Pasien\n");
+        printf("3. Proses Antrian Calon Pasien\n");
+        printf("4. Layanan Poli\n");
+        printf("5. Cetak Rekam Medis\n");
+        printf("6. Pembayaran\n");
         printf("0. Keluar\n");
         printf("===========================\n");
         printf("Pilihan Anda: ");
@@ -41,18 +41,23 @@ int main() {
 
         switch (pilihan) {
             case 1:
+                //
                 menuAntrianLayanan(&antrianLayanan);
+
                 break;
             case 2:
+                //
                 tampilkanStatusAntrian(&antrianLayanan);
                 break;
             case 3:
-                // ===== MODUL LAYANAN POLI ======
-                panggilPoli();
-                
+                //
+                prosesLoketAntrian(&antrianLayanan);
+
                 break;
             case 4:
-                // 
+                // ===== MODUL LAYANAN POLI ======
+                panggilPoli();
+                 
 
                 break;
             case 5:
@@ -81,7 +86,7 @@ int main() {
         }
     } while (pilihan != 0);
 
-    // 5. Membersihkan memori sebelum program benar-benar berakhir
+    // Membersihkan memori
     printf("Membersihkan memori dan keluar dari program. Terima Kasih!\n");
     freeBstPasien(rootPasien);
 
