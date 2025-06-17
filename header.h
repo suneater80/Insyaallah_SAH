@@ -6,30 +6,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include <time.h>
 #include <unistd.h>
 
 // //Hakim
 #include "Header/pasien.h"
+#include "Header/kunjungan.h"
+#include "Header/file.h"
 #include "Header/balancing.h"
 
-#include "Body/InputOutput.c"
-#include "Body/pasien.c"
 #include "Body/balancing.c"
+#include "Body/file.c"
+#include "Body/kunjungan.c"
+#include "Body/pasien.c"
 
 //Azam
 #include "Header/antrian.h"
-#include "Header/queueLayanan.h"
 
 #include "Body/antrian.c"
-#include "Body/queueLayanan.c"
 
 //Seruni
 #include "Header/poli.h"
-#include "Header/queuePoli.h"
 
 #include "Body/poli.c"
-#include "Body/queuePoli.c"
+
+// Azam & Seruni
+#include "Header/queue.h"
+#include "Body/queue.c"
 
 
 #endif
