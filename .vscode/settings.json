@@ -8,6 +8,6 @@
         "rekammedis.h": "c",
         "pembayaran.h": "c",
         "time.h": "c",
-        "header.h": "c"
+        "random": "c"
     }
 }

@@ -15,7 +15,8 @@ void clearScreen() {
 
 void pause() {
     printf("\nTekan ENTER untuk kembali ke menu...");
-    getchar(); getchar();
+    getchar(); 
+    getchar();
 }
 
 void tampilkanHeader(const char *judul) {
@@ -38,17 +39,29 @@ void menuAntrianLayanan(QueueLayanan *antrian) {
     printf("Silakan pilih kategori pasien:\n");
     printf("1. Umum\n");
     printf("2. BPJS\n");
+    printf("0. Kembali ke Menu Utama\n");
     printf("Pilihan Anda: ");
 
     int pilihan;
-    scanf("%d", &pilihan);
+    char input[10];
+    fgets(input, sizeof(input), stdin);
+    if (sscanf(input, "%d", &pilihan) != 1) {
+        printf("Pilihan tidak valid.\n");
+        pause();
+        return;
+    }
 
     Kategori kategori;
-    if (pilihan == 1) {
+    switch (pilihan) {
+    case 1:
         kategori = UMUM;
-    } else if (pilihan == 2) {
+        break;
+    case 2:
         kategori = BPJS;
-    } else {
+        break;
+    case 0:
+        return;
+    default:
         printf("Pilihan tidak valid.\n");
         pause();
         return;
@@ -117,8 +130,15 @@ void prosesLoketAntrian(QueueLayanan *antrian) {
     printf("1. Pasien Baru\n");
     printf("2. Pasien Lama\n");
     printf("\nPilihan: ");
-    scanf("%d", &pilihan);
     
+    char input[10];
+    fgets(input, sizeof(input), stdin);
+    if (sscanf(input, "%d", &pilihan) != 1) {
+        printf("Pilihan tidak valid!\n");
+        pause();
+        return;
+    }
+
     switch(pilihan) {
         case 1:
             printf("\nMemproses pasien baru...\n");
@@ -157,6 +177,8 @@ void prosesLoketAntrian(QueueLayanan *antrian) {
 
 void menuLoketAntrian(QueueLayanan *antrian) {
     int pilihan;
+    char input[10];
+
     do {
         clearScreen();
         tampilkanHeader("LOKET ANTRIAN");
@@ -165,8 +187,14 @@ void menuLoketAntrian(QueueLayanan *antrian) {
         printf("2. Lihat Status Antrian\n");
         printf("0. Kembali ke Menu Utama\n");
         printf("\nPilihan: ");
-        scanf("%d", &pilihan);
         
+        fgets(input, sizeof(input), stdin);
+        if (sscanf(input, "%d", &pilihan) != 1) {
+            printf("Pilihan tidak valid!\n");
+            pause();
+            continue;
+        }
+
         switch(pilihan) {
             case 1:
                 prosesLoketAntrian(antrian);
