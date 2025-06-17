@@ -60,7 +60,7 @@ int main() {
                 break;
                 
             case 4:
-                prosesLoketAntrian(&antrianLayanan);
+                prosesLoketAntrian(&antrianLayanan, &rootPasien, daftarPoliKlinik);
                 break;
 
             case 5:
@@ -132,8 +132,8 @@ int main() {
                 
             case 0:
                 // Keluar dari program
-                tampilkanHeader("TERIMA KASIH");
                 printf("Terima kasih telah menggunakan sistem kami.\n");
+                rootPasien = balanceBST(rootPasien);
                 saveAllPasienToFile(rootPasien, filename);
                 break;
             default:
