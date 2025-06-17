@@ -22,12 +22,13 @@ int main() {
     do {
         clearScreen();
         tampilkanHeader("SISTEM ADMINISTRASI PUSKESMAS");
-        printf("1. Pengambilan Antrian Calon Pasien \n");
-        printf("2. Lihat Status Antrian Calon Pasien\n");
-        printf("3. Proses Antrian Calon Pasien\n");
-        printf("4. Layanan Poli\n");
-        printf("5. Cetak Rekam Medis\n");
-        printf("6. Pembayaran\n");
+        printf("1. Layanan IGD \n");
+        printf("2. Pengambilan Antrian Calon Pasien \n");
+        printf("3. Lihat Status Antrian Calon Pasien\n");
+        printf("4. Proses Antrian Calon Pasien\n");
+        printf("5. Layanan Poli\n");
+        printf("6. Cetak Rekam Medis\n");
+        printf("7. Pembayaran\n");
         printf("0. Keluar\n");
         printf("===========================\n");
         printf("Pilihan Anda: ");
@@ -44,31 +45,84 @@ int main() {
         switch (pilihan) {
             case 1:
                 //
-                menuAntrianLayanan(&antrianLayanan);
-
+                layananIGD(daftarPoliKlinik);
                 break;
+
             case 2:
                 //
-                tampilkanStatusAntrian(&antrianLayanan);
+                menuAntrianLayanan(&antrianLayanan);
                 break;
+
             case 3:
                 //
-                prosesLoketAntrian(&antrianLayanan);
-
+                tampilkanStatusAntrian(&antrianLayanan);
+                
                 break;
+                
             case 4:
-                // ===== MODUL LAYANAN POLI ======
-                panggilPoli();
-                 
+                prosesLoketAntrian(&antrianLayanan);
+                break;
+
+            case 5:
+            // 
+            {
+                int pilihanPoli; // Variabel baru untuk input dalam submenu poli
+
+                do {
+                    clearScreen();
+                    tampilkanHeader("MENU UTAMA POLI");
+                    printf("1. Daftar Antrian Poli\n");
+                    printf("2. Proses Antrian Poli\n");
+                    printf("3. Lihat Status Antrian Poli\n");
+                    printf("0. Kembali ke Menu Utama\n");
+                    printf("Pilihan: ");
+                    scanf("%d", &pilihanPoli);
+
+                    switch (pilihanPoli) {
+                        case 1:
+                            clearScreen();
+                            tampilkanHeader("DAFTAR ANTRIAN POLI");
+                            printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+                            scanf("%d", &pilihanPoli);
+                            if (pilihanPoli >= 1 && pilihanPoli <= 3)
+                                daftarPoli(&daftarPoliKlinik[pilihanPoli - 1]);
+                            else
+                                printf("Pilihan tidak valid!\n");
+                            pause();
+                            break;
+
+                        case 2:
+                            clearScreen();
+                            tampilkanHeader("PROSES ANTRIAN POLI");
+                            printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+                            scanf("%d", &pilihanPoli);
+                            if (pilihanPoli >= 1 && pilihanPoli <= 3)
+                                prosesAntrianPoli(&daftarPoliKlinik[pilihanPoli - 1]);
+                            else
+                                printf("Pilihan tidak valid!\n");
+                            pause();
+                            break;
+
+                        case 3:
+                            lihatStatusAntrian(daftarPoliKlinik);
+                            break;
+
+                        case 0:
+                            break; // Kembali ke menu utama puskesmas
+                        default:
+                            printf("Pilihan tidak valid!\n");
+                            pause();
+                    }
+
+                } while (pilihanPoli != 0);
 
                 break;
-            case 5:
-                // 
+            }
 
                 break;
             case 6:
                 // 
-
+                
                 break;
 
             case 7:
