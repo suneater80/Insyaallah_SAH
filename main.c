@@ -44,7 +44,7 @@ int main() {
 
         switch (pilihan) {
             case 1:
-                //
+                // ==== LAYANAN IGD ====
                 layananIGD(daftarPoliKlinik);
                 break;
 
@@ -64,7 +64,7 @@ int main() {
                 break;
 
             case 5:
-            // 
+            // ==== LAYANAN POLI ====
             {
                 int pilihanPoli; // Variabel baru untuk input dalam submenu poli
 
@@ -82,7 +82,10 @@ int main() {
                         case 1:
                             clearScreen();
                             tampilkanHeader("DAFTAR ANTRIAN POLI");
-                            printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+                            printf("1. Poli Umum\n");
+                            printf("2. Poli Gigi\n");
+                            printf("3. Poli THT\n");
+                            printf("Pilihan: ");    
                             scanf("%d", &pilihanPoli);
                             if (pilihanPoli >= 1 && pilihanPoli <= 3)
                                 daftarPoli(&daftarPoliKlinik[pilihanPoli - 1]);
@@ -94,7 +97,10 @@ int main() {
                         case 2:
                             clearScreen();
                             tampilkanHeader("PROSES ANTRIAN POLI");
-                            printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+                            printf("1. Poli Umum\n");
+                            printf("2. Poli Gigi\n");
+                            printf("3. Poli THT\n");
+                            printf("Pilihan: ");
                             scanf("%d", &pilihanPoli);
                             if (pilihanPoli >= 1 && pilihanPoli <= 3)
                                 prosesAntrianPoli(&daftarPoliKlinik[pilihanPoli - 1]);

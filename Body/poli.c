@@ -11,6 +11,7 @@ void initPoli(Poli poli[]) {
     for (int i = 0; i < MAX_POLI; i++) {
         initQueuePoli(&poli[i].antrian); // Inisialisasi queue untuk setiap poli 
         poli[i].nomorTerakhir = 0; // Reset nomor antrian 
+        poli[i].nomorTerakhirIGD = 0; // Reset nomor antrian IGD 
     }
 }
 
@@ -82,14 +83,12 @@ void lihatStatusAntrian(Poli poli[]) {
 
 
 
-
 int panggilPoli() {
     Poli poli[MAX_POLI]; // Array untuk menyimpan semua poli
     initPoli(poli); // Inisialisasi nama poli & queue antriannya
     
     int pilihan;
-  
-    
+
     do {
         clearScreen();
         tampilkanHeader("MENU UTAMA POLI");
@@ -104,7 +103,10 @@ int panggilPoli() {
             case 1:
                 clearScreen();
                 tampilkanHeader("DAFTAR ANTRIAN POLI");
-                printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+                printf("1. Poli Umum\n");
+                printf("2. Poli Gigi\n");
+                printf("3. Poli THT\n");
+                printf("Pilihan: ");
                 scanf("%d", &pilihan);
                 if (pilihan >= 1 && pilihan <= 3)
                     daftarPoli(&poli[pilihan - 1]);
@@ -116,7 +118,10 @@ int panggilPoli() {
             case 2:
                 clearScreen();
                 tampilkanHeader("PROSES ANTRIAN POLI");
-                printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+                printf("1. Poli Umum\n");
+                printf("2. Poli Gigi\n");
+                printf("3. Poli THT\n");
+                printf("Pilihan: ");
                 scanf("%d", &pilihan);
                 if (pilihan >= 1 && pilihan <= 3)
                     prosesAntrianPoli(&poli[pilihan - 1]);
@@ -130,8 +135,7 @@ int panggilPoli() {
                 break;
 
             case 0:
-                // printf("Terima kasih!\n");
-                // Tidak tampilkan apa-apa, langsung keluar menu poli
+            
                 break;
 
             default:

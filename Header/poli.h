@@ -20,7 +20,7 @@ typedef struct {
     int nomorTerakhirIGD;  // <-- Tambahkan nomor antrian untuk IGD
 } Poli;
 
-// ====== PROTOTIPE FUNGSI ======
+// ====== DEKLARASI FUNGSI ======
 void tampilkanHeader(const char *judul); // Inisialisasi daftar poli dan antrian
 void initPoli(Poli poli[]); //Tambah pasien ke antrian poli
 void daftarPoli(Poli *poli); // Proses pasien dalam antrian poli
