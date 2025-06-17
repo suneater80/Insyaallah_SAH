@@ -108,7 +108,7 @@ void tampilkanStatusAntrian(QueueLayanan *antrian) {
     pause();
 }
 
-void prosesLoketAntrian(QueueLayanan *antrian) {
+void prosesLoketAntrian(QueueLayanan *antrian, NodePasien** rootPasien, Poli* daftarPoliKlinik) {
     int pilihan;
     clearScreen();
     tampilkanHeader("PROSES LOKET ANTRIAN");
@@ -141,17 +141,76 @@ void prosesLoketAntrian(QueueLayanan *antrian) {
 
     switch(pilihan) {
         case 1:
+        {
+            // Tambah Pasien Baru
             printf("\nMemproses pasien baru...\n");
-            printf("- Input data pasien baru\n");
-            printf("- Verifikasi dokumen\n");
-            printf("- Pemilihan poli\n");
+            {
+                Pasien newPasien;
+                inputDataPasien(&newPasien);
+                
+                // Validasi NIK tidak kosong
+                if (strlen(newPasien.nik) == 0) {
+                    tampilkanPesanError("NIK tidak boleh kosong!");
+                    break;
+                }
+                
+                // Cek apakah NIK sudah ada
+                NodePasien* existing = searchPasien(*rootPasien, newPasien.nik);
+                if (existing != NULL) {
+                    tampilkanPesanError("Pasien dengan NIK tersebut sudah terdaftar!");
+                    break;
+                }
+                
+                *rootPasien = insertPasien(*rootPasien, newPasien);
+                tampilkanPesanSukses("Pasien berhasil ditambahkan!");
+                tungguEnter();
+                break;
+            }
+
+            //pasien memilih poli yang dituju
+            clearScreen();
+            int pilihanPoli;
+            tampilkanHeader("DAFTAR ANTRIAN POLI");
+            printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+            scanf("%d", &pilihanPoli);
+            if (pilihanPoli >= 1 && pilihanPoli <= 3)
+                daftarPoli(&daftarPoliKlinik[pilihanPoli - 1]);
+            else
+                    printf("Pilihan tidak valid!\n");
+            pause();
+
             break;
+        }
         case 2:
+        {
+            // Cari Pasien yang telah terdaftar
             printf("\nMemproses pasien lama...\n");
-            printf("- Pencarian data pasien\n");
-            printf("- Update informasi\n");
-            printf("- Pemilihan poli\n");
+            char* nik = inputNikPasien();
+                
+            NodePasien* found = searchPasien(*rootPasien, nik);
+            if (found != NULL) {
+                cetakDataPasien(found->data);
+            } else {
+                char errorMsg[100];
+                sprintf(errorMsg, "Pasien dengan NIK %s tidak ditemukan.", nik);
+                tampilkanPesanError(errorMsg);
+            }
+            tungguEnter();
+
+            //pasien memilih poli yang dituju
+            clearScreen();
+            int pilihanPoli;
+            tampilkanHeader("DAFTAR ANTRIAN POLI");
+            printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+            scanf("%d", &pilihanPoli);
+            if (pilihanPoli >= 1 && pilihanPoli <= 3)
+                daftarPoli(&daftarPoliKlinik[pilihanPoli - 1]);
+            else
+                    printf("Pilihan tidak valid!\n");
+            pause();
+
             break;
+        }
         default:
             printf("Pilihan tidak valid!\n");
             pause();
@@ -175,38 +234,3 @@ void prosesLoketAntrian(QueueLayanan *antrian) {
     pause();
 }
 
-void menuLoketAntrian(QueueLayanan *antrian) {
-    int pilihan;
-    char input[10];
-
-    do {
-        clearScreen();
-        tampilkanHeader("LOKET ANTRIAN");
-        
-        printf("1. Proses Antrian\n");
-        printf("2. Lihat Status Antrian\n");
-        printf("0. Kembali ke Menu Utama\n");
-        printf("\nPilihan: ");
-        
-        fgets(input, sizeof(input), stdin);
-        if (sscanf(input, "%d", &pilihan) != 1) {
-            printf("Pilihan tidak valid!\n");
-            pause();
-            continue;
-        }
-
-        switch(pilihan) {
-            case 1:
-                prosesLoketAntrian(antrian);
-                break;
-            case 2:
-                tampilkanStatusAntrian(antrian);
-                break;
-            case 0:
-                break;
-            default:
-                printf("Pilihan tidak valid!\n");
-                pause();
-        }
-    } while(pilihan != 0);
-}

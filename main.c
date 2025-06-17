@@ -60,7 +60,7 @@ int main() {
                 break;
                 
             case 4:
-                prosesLoketAntrian(&antrianLayanan);
+                prosesLoketAntrian(&antrianLayanan, &rootPasien, daftarPoliKlinik);
                 break;
 
             case 5:

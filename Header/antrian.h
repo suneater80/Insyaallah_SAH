@@ -10,11 +10,13 @@
 #define ANTRIAN_H
 
 #include "queue.h"
+#include "pasien.h"
+#include "poli.h"
 
 void menuAntrianLayanan(QueueLayanan *antrian);
 void tampilkanStatusAntrian(QueueLayanan *antrian);
-void prosesLoketAntrian(QueueLayanan *antrian);
-void menuLoketAntrian(QueueLayanan *antrian);
+void prosesLoketAntrian(QueueLayanan *antrian, NodePasien** rootPasien, Poli* daftarPoliKlinik); //parsing by value **
+
 
 // Fungsi helper
 void tampilkanHeader(const char *judul);
