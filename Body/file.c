@@ -236,15 +236,55 @@ char* inputNikPasien(void) {
 int tampilkanMenu(void) {
     int pilihan;
     
-    printf("\n=== SISTEM MANAJEMEN PASIEN ===\n");
-    printf("1. Tambah Pasien Baru\n");
-    printf("2. Cari Pasien\n");
-    printf("3. Tambah Kunjungan\n");
-    printf("4. Cetak Rekam Medis\n");
-    printf("5. Lihat Semua Pasien\n");
-    printf("6. Simpan Data\n");
-    printf("0. Keluar\n");
-    printf("Pilihan: ");
+    printf("=============================================\n");
+    printf("            SISTEM MANAJEMEN PASIEN          \n");
+    printf("=============================================\n\n");
+
+    // Daftar menu utama
+    printf("  [1] Tambah Pasien Baru\n");
+    printf("  [2] Cari Pasien (berdasarkan NIK)\n");
+    printf("  [3] Tambah Kunjungan Pasien\n");
+    printf("  [4] Cetak Rekam Medis Pasien\n");
+    printf("  [5] Lihat Semua Pasien (Inorder)\n");
+    printf("  [6] Simpan Data ke File\n\n");
+    
+    printf("  [0] Keluar\n");
+    printf(" \n");
+    printf("Pilihan : ");
+    
+    while (scanf("%d", &pilihan) != 1) {
+        printf("Input tidak valid! Masukkan angka: ");
+        clearInputBuffer();
+    }
+    clearInputBuffer();
+    
+    return pilihan;
+}
+
+int tampilkanMenu2(void) {
+    int pilihan;
+    
+    printf("=============================================\n");
+    printf("            SISTEM MANAJEMEN PASIEN          \n");
+    printf("=============================================\n\n");
+
+    // Daftar menu utama
+    printf("  [1] Tambah Pasien Baru\n");
+    printf("  [2] Cari Pasien (berdasarkan NIK)\n");
+    printf("  [3] Tambah Kunjungan Pasien\n");
+    printf("  [4] Cetak Rekam Medis Pasien\n");
+    printf("  [5] Lihat Semua Pasien (Inorder)\n");
+    printf("  [6] Simpan Data ke File\n\n");
+    
+    // Daftar menu tambahan untuk uji Balance
+    printf("--- Menu Advanced (Struktur Data) ---\n");
+    printf("  [7] Balance BST\n");
+    printf("  [8] Statistik & Traversal BST\n");
+    printf("  [9] Tambah Data tes DUmmy\n\n");
+    
+    printf("  [0] Keluar\n");
+    printf(" \n");
+    printf("Pilihan : ");
     
     while (scanf("%d", &pilihan) != 1) {
         printf("Input tidak valid! Masukkan angka: ");
