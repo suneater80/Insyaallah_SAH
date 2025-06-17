@@ -7,32 +7,32 @@ int main() {
     QueueLayanan antrianLayanan;
     Poli daftarPoliKlinik[MAX_POLI];
 
+    Pembayaran *headPembayaran = NULL;
+
     initQueueLayanan(&antrianLayanan);
     initPoli(daftarPoliKlinik);
 
     // Muat data pasien dari file saat program dimulai
     char filename[] = "dataPasien.txt";
     rootPasien = loadPasienFromFile(filename);
-    printf("Memulai Sistem Administrasi Rumah Sakit...\n");
+    printf("Memulai Sistem Administrasi Puskesmas...\n");
     sleep(2);
 
     int pilihan;
     do {
         clearScreen();
-        tampilkanHeader("SISTEM MANAJEMEN KLINIK");
-        printf("=== UNTUK PASIEN ===\n");
-        printf("1. Ambil Antrian Layanan\n");
-        printf("2. Lihat Status Antrian Masuk\n");
-        printf("3. Lihat Status Antrian Poli\n\n");
-        
-        printf("=== UNTUK PETUGAS ===\n");
-        printf("4. Loket Antrian\n");
-        printf("5. Dokter\n");
-        printf("6. Pembayaran\n\n");
-        
+        tampilkanHeader("SISTEM ADMINISTRASI PUSKESMAS");
+        printf("1. Layanan IGD \n");
+        printf("2. Pengambilan Antrian Calon Pasien \n");
+        printf("3. Lihat Status Antrian Calon Pasien\n");
+        printf("4. Proses Antrian Calon Pasien\n");
+        printf("5. Layanan Poli\n");
+        printf("6. Cetak Rekam Medis\n");
+        printf("7. Pembayaran\n");
         printf("0. Keluar\n");
         printf("===========================\n");
         printf("Pilihan Anda: ");
+
         if (scanf("%d", &pilihan) != 1) {
             printf("Input tidak valid. Masukkan angka.\n");
             clearInputBuffer(); 
@@ -44,29 +44,92 @@ int main() {
 
         switch (pilihan) {
             case 1:
-                // 
-                
+                //
+                layananIGD(daftarPoliKlinik);
                 break;
+
             case 2:
-                // 
-                
+                //
+                menuAntrianLayanan(&antrianLayanan);
                 break;
+
             case 3:
-                // 
+                //
+                tampilkanStatusAntrian(&antrianLayanan);
                 
                 break;
+                
             case 4:
-                // 
+                prosesLoketAntrian(&antrianLayanan, &rootPasien, daftarPoliKlinik);
+                break;
+
+            case 5:
+            // 
+            {
+                int pilihanPoli; // Variabel baru untuk input dalam submenu poli
+
+                do {
+                    clearScreen();
+                    tampilkanHeader("MENU UTAMA POLI");
+                    printf("1. Daftar Antrian Poli\n");
+                    printf("2. Proses Antrian Poli\n");
+                    printf("3. Lihat Status Antrian Poli\n");
+                    printf("0. Kembali ke Menu Utama\n");
+                    printf("Pilihan: ");
+                    scanf("%d", &pilihanPoli);
+
+                    switch (pilihanPoli) {
+                        case 1:
+                            clearScreen();
+                            tampilkanHeader("DAFTAR ANTRIAN POLI");
+                            printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+                            scanf("%d", &pilihanPoli);
+                            if (pilihanPoli >= 1 && pilihanPoli <= 3)
+                                daftarPoli(&daftarPoliKlinik[pilihanPoli - 1]);
+                            else
+                                printf("Pilihan tidak valid!\n");
+                            pause();
+                            break;
+
+                        case 2:
+                            clearScreen();
+                            tampilkanHeader("PROSES ANTRIAN POLI");
+                            printf("1. Poli Umum\n2. Poli Gigi\n3. Poli THT\nPilihan: ");
+                            scanf("%d", &pilihanPoli);
+                            if (pilihanPoli >= 1 && pilihanPoli <= 3)
+                                prosesAntrianPoli(&daftarPoliKlinik[pilihanPoli - 1]);
+                            else
+                                printf("Pilihan tidak valid!\n");
+                            pause();
+                            break;
+
+                        case 3:
+                            lihatStatusAntrian(daftarPoliKlinik);
+                            break;
+
+                        case 0:
+                            break; // Kembali ke menu utama puskesmas
+                        default:
+                            printf("Pilihan tidak valid!\n");
+                            pause();
+                    }
+
+                } while (pilihanPoli != 0);
 
                 break;
-            case 5:
-                // 
+            }
 
                 break;
             case 6:
                 // 
+                
+                break;
+
+            case 7:
+                menuPembayaran(rootPasien, &headPembayaran);
 
                 break;
+                
             case 0:
                 // Keluar dari program
                 tampilkanHeader("TERIMA KASIH");
@@ -79,7 +142,7 @@ int main() {
         }
     } while (pilihan != 0);
 
-    // 5. Membersihkan memori sebelum program benar-benar berakhir
+    // Membersihkan memori
     printf("Membersihkan memori dan keluar dari program. Terima Kasih!\n");
     freeBstPasien(rootPasien);
 

@@ -17,5 +17,6 @@ typedef struct Pembayaran {
 
 void tambahAntrianPembayaran(Pembayaran **head, Pembayaran data);
 void prosesPembayaran(Pembayaran **head);
+void menuPembayaran(NodePasien* rootPasien, Pembayaran **headPembayaran);
 
 #endif
