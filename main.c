@@ -7,6 +7,8 @@ int main() {
     QueueLayanan antrianLayanan;
     Poli daftarPoliKlinik[MAX_POLI];
 
+    Pembayaran *headPembayaran = NULL;
+
     initQueueLayanan(&antrianLayanan);
     initPoli(daftarPoliKlinik);
 
@@ -70,7 +72,7 @@ int main() {
                 break;
 
             case 7:
-                //
+                menuPembayaran(rootPasien, &headPembayaran);
 
                 break;
                 
