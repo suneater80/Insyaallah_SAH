@@ -1,5 +1,4 @@
-#ifndef FILE_C
-#define FILE_C
+
 
 #include "../header.h"
 
@@ -309,5 +308,3 @@ void tungguEnter(void) {
     printf("\nTekan Enter untuk melanjutkan...");
     getchar();
 }
-
-#endif

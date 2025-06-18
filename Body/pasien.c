@@ -1,6 +1,5 @@
 /*Implementasi fungsi tambah pasien, cari pasien (BST), riwayat kunjungan*/
-#ifndef PASIEN_C
-#define PASIEN_C
+
 
 #include "../header.h"
 
@@ -84,5 +83,3 @@ void freeBstPasien(NodePasien* root) {
         free(root);
     }
 }
-
-#endif

@@ -1,6 +1,5 @@
 /* Implementasi fungsi balancing BST Pasien */
-#ifndef BALANCING_C
-#define BALANCING_C
+
 
 #include "../header.h"
 
@@ -137,5 +136,3 @@ int verifyBST(NodePasien* root, char* minNik, char* maxNik) {
 int isBST(NodePasien* root) {
     return verifyBST(root, NULL, NULL);
 }
-
-#endif

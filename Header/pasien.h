@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-// Forward declaration untuk struct Kunjungan, ilmu baru, mahal mahal
+// Forward declaration untuk struct Kunjungan
 typedef struct Kunjungan Kunjungan;
 
 

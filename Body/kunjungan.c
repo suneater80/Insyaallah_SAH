@@ -1,5 +1,3 @@
-#ifndef KUNJUNGAN_C
-#define KUNJUNGAN_C
 
 #include "../header.h"
 
@@ -62,5 +60,3 @@ void freeRiwayatKunjungan(Kunjungan* head) {
         free(temp);
     }
 }
-
-#endif
