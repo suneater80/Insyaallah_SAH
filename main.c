@@ -45,7 +45,7 @@ int main() {
         switch (pilihan) {
             case 1:
                 // ==== LAYANAN IGD ====
-                layananIGD(daftarPoliKlinik);
+                layananIGD(&daftarPoliKlinik);
                 break;
 
             case 2:

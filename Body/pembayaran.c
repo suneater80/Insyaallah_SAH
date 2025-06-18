@@ -199,7 +199,7 @@ void prosesInputPembayaran(NodePasien* rootPasien, Pembayaran **headPembayaran) 
     strcpy(new_pembayaran_node.poli, layanan_terpilih->nama_layanan);
     new_pembayaran_node.biaya = (int)biaya_layanan_hitung; // Penting: cast ke int karena struct Pembayaran memiliki biaya int
 
-    tambahAntrianPembayaran(headPembayaran, new_pembayaran_node); // Panggil fungsi yang baru saja kita implementasikan
+    tambahAntrianPembayaran(headPembayaran, new_pembayaran_node); 
 
     // 7. Tampilkan Struk Pembayaran
     getCurrentDateTime(current_datetime, sizeof(current_datetime));
