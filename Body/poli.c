@@ -1,4 +1,5 @@
 #include "../Header/poli.h"
+#include "../Header/file.h"
 #include <conio.h>  // Untuk fungsi _kbhit() dan _getch()
 
 
@@ -10,7 +11,9 @@ void initPoli(Poli poli[]) {
 
     for (int i = 0; i < MAX_POLI; i++) {
         initQueuePoli(&poli[i].antrian); // Inisialisasi queue untuk setiap poli 
+        initQueuePoli(&poli[i].antrianIGD);
         poli[i].nomorTerakhir = 0; // Reset nomor antrian 
+        poli[i].nomorTerakhirIGD = 0;
     }
 }
 
@@ -31,10 +34,18 @@ void daftarPoli(Poli *poli) {
 
 // MODUL PROSES ANTRIAN POLI SATU PER SATU 
 void prosesAntrianPoli(Poli *poli, NodePasien** rootPasien) {
-    if (isEmptyPoli(&poli->antrian)) { // Cek jika antrian kosong
+    if (!isEmptyPoli(&poli->antrianIGD)) {
+        printf("[PRIORITAS IGD-%d] diperiksa di %s...\n", peekPoli(&poli->antrianIGD), poli->nama);
+        sleep(2);
+        dequeuePoli(&poli->antrianIGD);
+    } else if (!isEmptyPoli(&poli->antrian)) {
+        printf("Pasien nomor %d diperiksa di %s...\n", peekPoli(&poli->antrian), poli->nama);
+        sleep(2);
+        dequeuePoli(&poli->antrian);
+    } else {
         printf("Tidak ada pasien dalam antrian %s.\n", poli->nama);
-        return;
     }
+
 
     int nomor = peekPoli(&poli->antrian); // Ambil nomor antrian paling depan
     printf("Pasien nomor %d sedang diperiksa di %s...\n", nomor, poli->nama);
@@ -56,7 +67,8 @@ void prosesAntrianPoli(Poli *poli, NodePasien** rootPasien) {
     printf("\n");  // baris baru setelah countdown selesai
     printf("\nPasien nomor %d selesai diperiksa.\n\n", dequeuePoli(&poli->antrian)); // Keluarkan pasien dari antrian
 
-    // Input Data Kunjungan    
+    // Input Data Kunjungan  
+    clearInputBuffer();  
     printf("Dokter menginput Data Kunjungan Pasien. \n");
     char* nik = inputNikPasien();
                 

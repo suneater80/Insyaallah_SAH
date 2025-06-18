@@ -117,7 +117,6 @@ int main() {
                     printf("\n=== INFORMASI BST SAAT INI ===\n");
                     printf("Jumlah node: %d\n", countNodes(root));
                     printf("Tinggi BST: %d\n", getTreeHeight(root));
-                    printf("BST valid: %s\n", isBST(root) ? "YA" : "TIDAK");
                     
                     printf("\nApakah Anda ingin melakukan balancing? (y/n): ");
                     char confirm;
@@ -145,7 +144,6 @@ int main() {
                     printf("\n=== STATISTIK BST ===\n");
                     printf("Jumlah total node: %d\n", countNodes(root));
                     printf("Tinggi BST: %d\n", getTreeHeight(root));
-                    printf("BST property valid: %s\n", isBST(root) ? "YA" : "TIDAK");
                     
                     // Hitung tinggi ideal untuk BST seimbang
                     int nodeCount = countNodes(root);
@@ -175,10 +173,10 @@ int main() {
                 
                 // Data test
                 Pasien testPasien[] = {
-                    {"1111111111111111", "Dewi Sartika", 31, "P", "Jl. Gatot Subroto No. 4", "081234567893", "AKTIF", NULL, 0},
-                    {"1111111111111112", "Ahmad Wijaya", 35, "L", "Jl. Merdeka No. 1", "081234567890", "AKTIF", NULL, 0},
+                    {"1111111111111111", "Siti Nurhaliza", 31, "P", "Jl. Gatot Subroto No. 4", "081234567893", "AKTIF", NULL, 0},
+                    {"1111111111111112", "pentagon xsw", 35, "L", "Jl. Merdeka No. 1", "081234567890", "AKTIF", NULL, 0},
                     {"1111111111111113", "Budi Santoso", 42, "L", "Jl. Thamrin No. 3", "081234567892", "NONAKTIF", NULL, 0},
-                    {"1111111111111114", "Siti Nurhaliza", 28, "P", "Jl. Sudirman No. 2", "081234567891", "AKTIF", NULL, 0},
+                    {"1111111111111114", "joko wi dodo", 28, "P", "Jl. Sudirman No. 2", "081234567891", "AKTIF", NULL, 0},
                     {"1111111111111115", "Eko Prasetyo", 39, "L", "Jl. HR Rasuna Said No. 5", "081234567894", "AKTIF", NULL, 0}
                 };
                 

@@ -12,7 +12,7 @@ int main() {
     initQueueLayanan(&antrianLayanan);
     initPoli(daftarPoliKlinik);
 
-    // Muat data pasien dari file saat program dimulai
+    // Muat data pasien dari file saat pro1gram dimulai
     char filename[] = "dataPasien.txt";
     rootPasien = loadPasienFromFile(filename);
     printf("Memulai Sistem Administrasi Puskesmas...\n");
