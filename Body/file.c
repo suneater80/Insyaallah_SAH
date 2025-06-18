@@ -273,7 +273,7 @@ int tampilkanMenu2(void) {
     printf("  [2] Cari Pasien (berdasarkan NIK)\n");
     printf("  [3] Tambah Kunjungan Pasien\n");
     printf("  [4] Cetak Rekam Medis Pasien\n");
-    printf("  [5] Lihat Semua Pasien (Inorder)\n");
+    printf("  [5] Lihat Semua Pasien\n");
     printf("  [6] Simpan Data ke File\n\n");
     
     // Daftar menu tambahan untuk uji Balance
